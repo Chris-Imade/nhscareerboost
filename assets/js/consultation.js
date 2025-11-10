@@ -1,4 +1,7 @@
 // Consultation/Checkout Page JavaScript
+const API_BASE_URL = 'https://nhscareerboost-server.onrender.com';
+const API_ENDPOINT = `${API_BASE_URL}/api/contact`;
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Consultation page loaded');
     
@@ -136,20 +139,69 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Details form submission
     if (detailsForm) {
-        detailsForm.addEventListener('submit', function(e) {
+        detailsForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Get form data
             const formData = new FormData(detailsForm);
             const data = Object.fromEntries(formData.entries());
             
-            console.log('Form submitted:', data);
+            // Get selected service
+            const selectedService = document.querySelector('input[name="service"]:checked');
+            const serviceKey = selectedService ? selectedService.value : 'cv-review';
+            const serviceName = packages[serviceKey].name;
             
-            // Show success message
-            alert('Thank you! Your booking has been confirmed. You will receive a confirmation email shortly at ' + data.email);
+            // Prepare data for backend API
+            const apiData = {
+                name: data.fullname,
+                email: data.email,
+                phone: data.phone,
+                service: serviceName,
+                message: `Transaction Ref: ${data.transaction_ref || 'N/A'}\n` +
+                        `NHS Band: ${data.nhs_band || 'N/A'}\n` +
+                        `Role Applying For: ${data.role || 'N/A'}\n` +
+                        `Additional Notes: ${data.notes || 'N/A'}`
+            };
             
-            // Optionally redirect
-            // window.location.href = 'index.html';
+            // Disable submit button
+            const submitBtn = detailsForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
+            
+            try {
+                const response = await fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(apiData)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Success
+                    alert('✅ Thank you! Your booking has been confirmed. You will receive a confirmation email shortly at ' + data.email);
+                    
+                    // Redirect to home page after 2 seconds
+                    setTimeout(function() {
+                        window.location.href = 'index.html';
+                    }, 2000);
+                } else {
+                    // Error from server
+                    const errors = result.errors?.map(e => e.message).join('\n') || result.message;
+                    alert('❌ Error: ' + errors);
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                }
+            } catch (error) {
+                // Network error
+                console.error('Network error:', error);
+                alert('❌ Network error. Please check your connection and try again.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
         });
     }
 });

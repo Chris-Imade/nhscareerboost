@@ -28,6 +28,108 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <!--<< Main.css >>-->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Radio Button Card Styling */
+        .service-radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .service-radio-card {
+            position: relative;
+            display: block;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .service-radio-card:hover {
+            border-color: #0066cc;
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .service-radio-card input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .service-radio-card input[type="radio"]:checked~.radio-content {
+            border-left: 4px solid #0066cc;
+            padding-left: 16px;
+        }
+
+        .service-radio-card input[type="radio"]:checked~.radio-content .radio-check {
+            background: #0066cc;
+            border-color: #0066cc;
+        }
+
+        .service-radio-card input[type="radio"]:checked~.radio-content .radio-check::after {
+            display: block;
+        }
+
+        .service-radio-card:has(input:checked) {
+            border-color: #0066cc;
+            background: #f0f7ff;
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+        }
+
+        .radio-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            padding: 5px;
+            border-radius: 6px;
+        }
+
+        .radio-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .radio-check {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            position: relative;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .radio-check::after {
+            content: '';
+            position: absolute;
+            display: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .radio-content h4 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .service-icon {
+            font-size: 20px;
+            color: #0066cc;
+        }
+    </style>
 </head>
 
 <body class="body-color">
@@ -211,24 +313,115 @@
                     contact us!</h2>
             </div>
             <div class="ht-contact-wrapper">
-                <form action="contact.html#" method="post">
+                <form id="contactForm">
                     <div class="row justify-content-center">
                         <div class="col-lg-10">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="text" placeholder="Your name" required>
+                                    <input type="text" id="name" name="name" placeholder="Your name" required minlength="2" maxlength="100">
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" placeholder="Email address" required>
+                                    <input type="email" id="email" name="email" placeholder="Email address" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" id="phone" name="phone" placeholder="Phone (optional)" minlength="10" maxlength="20">
                                 </div>
                                 <div class="col-12">
-                                    <input type="text" placeholder="Select subject" required>
+                                    <label class="form-label" style="display: block; margin-bottom: 15px; margin-top: 10px; font-size: 16px; font-weight: 600; color: #333;">Select Service *</label>
+                                    <div class="service-radio-group">
+                                        <!-- CV Review -->
+                                        <label class="service-radio-card" for="service-cv-review">
+                                            <input type="radio" id="service-cv-review" name="service" value="CV Review" required>
+                                            <div class="radio-content">
+                                                <div class="radio-header">
+                                                    <span class="radio-check"></span>
+                                                    <span class="service-icon"><i class="fa-solid fa-file-lines"></i></span>
+                                                    <h4>CV Review</h4>
+                                                </div>
+                                            </div>
+                                        </label>
+
+                                        <!-- Interview Preparation -->
+                                        <label class="service-radio-card" for="service-interview">
+                                            <input type="radio" id="service-interview" name="service" value="Interview Preparation">
+                                            <div class="radio-content">
+                                                <div class="radio-header">
+                                                    <span class="radio-check"></span>
+                                                    <span class="service-icon"><i class="fa-solid fa-comments"></i></span>
+                                                    <h4>Interview Preparation</h4>
+                                                </div>
+                                            </div>
+                                        </label>
+
+                                        <!-- Career Coaching -->
+                                        <label class="service-radio-card" for="service-coaching">
+                                            <input type="radio" id="service-coaching" name="service" value="Career Coaching">
+                                            <div class="radio-content">
+                                                <div class="radio-header">
+                                                    <span class="radio-check"></span>
+                                                    <span class="service-icon"><i class="fa-solid fa-user-tie"></i></span>
+                                                    <h4>Career Coaching</h4>
+                                                </div>
+                                            </div>
+                                        </label>
+
+                                        <!-- LinkedIn Profile Optimization -->
+                                        <label class="service-radio-card" for="service-linkedin">
+                                            <input type="radio" id="service-linkedin" name="service" value="LinkedIn Profile Optimization">
+                                            <div class="radio-content">
+                                                <div class="radio-header">
+                                                    <span class="radio-check"></span>
+                                                    <span class="service-icon"><i class="fa-brands fa-linkedin"></i></span>
+                                                    <h4>LinkedIn Profile Optimization</h4>
+                                                </div>
+                                            </div>
+                                        </label>
+
+                                        <!-- Job Application Support -->
+                                        <label class="service-radio-card" for="service-job-support">
+                                            <input type="radio" id="service-job-support" name="service" value="Job Application Support">
+                                            <div class="radio-content">
+                                                <div class="radio-header">
+                                                    <span class="radio-check"></span>
+                                                    <span class="service-icon"><i class="fa-solid fa-briefcase"></i></span>
+                                                    <h4>Job Application Support</h4>
+                                                </div>
+                                            </div>
+                                        </label>
+
+                                        <!-- Career Change Guidance -->
+                                        <label class="service-radio-card" for="service-career-change">
+                                            <input type="radio" id="service-career-change" name="service" value="Career Change Guidance">
+                                            <div class="radio-content">
+                                                <div class="radio-header">
+                                                    <span class="radio-check"></span>
+                                                    <span class="service-icon"><i class="fa-solid fa-route"></i></span>
+                                                    <h4>Career Change Guidance</h4>
+                                                </div>
+                                            </div>
+                                        </label>
+
+                                        <!-- Other -->
+                                        <label class="service-radio-card" for="service-other">
+                                            <input type="radio" id="service-other" name="service" value="Other">
+                                            <div class="radio-content">
+                                                <div class="radio-header">
+                                                    <span class="radio-check"></span>
+                                                    <span class="service-icon"><i class="fa-solid fa-ellipsis"></i></span>
+                                                    <h4>Other</h4>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
                                 </div>
                                 <div class="col-12">
-                                    <textarea placeholder="Type your message" required></textarea>
+                                    <textarea id="message" name="message" placeholder="Type your message (optional)" maxlength="2000" rows="5"></textarea>
                                 </div>
                                 <div class="col-12 text-center">
-                                    <button type="submit" class="ht-btn style-2">SEND MESSAGE HERE</button>
+                                    <button type="submit" id="submitBtn" class="ht-btn style-2">SEND MESSAGE HERE</button>
+                                </div>
+                                <div class="col-12 text-center mt-3">
+                                    <div id="formStatus"></div>
                                 </div>
                             </div>
                         </div>
@@ -322,6 +515,8 @@
     <script src="assets/js/typed.min.js"></script>
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
+    <!--<< Contact Form.js >>-->
+    <script src="assets/js/contact-form.js"></script>
 </body>
 
 </html>
