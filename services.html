@@ -29,6 +29,83 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <!--<< Main.css >>-->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Custom Styles for Enhanced UI -->
+    <style>
+        /* NHS Blue as Primary Button Color */
+        .ht-btn {
+            background-color: #005EB8 !important;
+            border-color: #005EB8 !important;
+            color: white !important;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        /* Darker NHS Blue on Hover */
+        .ht-btn:hover {
+            background-color: #003087 !important;
+            border-color: #003087 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 94, 184, 0.5) !important;
+        }
+
+        /* NHS Blue CTA Button Specific */
+        .ht-btn.style-2 {
+            background-color: #005EB8 !important;
+            border-color: #005EB8 !important;
+            box-shadow: 0 4px 15px rgba(0, 94, 184, 0.3);
+        }
+
+        .ht-btn.style-2:hover {
+            background-color: #003087 !important;
+            border-color: #003087 !important;
+            box-shadow: 0 6px 20px rgba(0, 94, 184, 0.5) !important;
+        }
+
+        /* Service Card Hover */
+        .single-item {
+            transition: all 0.3s ease;
+        }
+
+        .single-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 94, 184, 0.25);
+        }
+
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Badge Animations */
+        .single-item span[style*="position: absolute"] {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Breadcrumb Title Responsive */
+        @media (max-width: 768px) {
+            .ht-breadcrumb-title {
+                font-size: 24px !important;
+            }
+
+            /* Mobile service cards */
+            .single-item {
+                margin-bottom: 30px !important;
+            }
+        }
+    </style>
 </head>
 
 <body class="body-color">
@@ -62,8 +139,7 @@
                         <ul class="right">
                             <li><i class="fa-solid fa-envelope"></i><a
                                     href="mailto:daniel@nhscareerboost.co.uk">daniel@nhscareerboost.co.uk</a></li>
-                            <li><i class="fa-solid fa-phone"></i><a
-                                    href="tel:01604908464">01604 908464</a></li>
+                            <li><i class="fa-solid fa-phone"></i><a href="tel:01604908464">01604 908464</a></li>
                         </ul>
                     </div>
                 </div>
@@ -76,7 +152,8 @@
                 <div class="ht-menu-wrapper">
                     <div class="ht-menu-left">
                         <div class="ht-menu-logo">
-                            <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo" style="max-height: 50px; width: auto;"></a>
+                            <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo"
+                                    style="max-height: 50px; width: auto;"></a>
                         </div>
                         <div class="ht-menu-main d-none d-lg-block">
                             <nav class="ht-mobile-menu-active">
@@ -106,7 +183,8 @@
     <div class="ht-offcanvas">
         <div class="ht-offcanvas-wrapper">
             <div class="ht-offcanvas-header mb-50">
-                <a href="index.html" class="ht-offcanvas-logo"><img src="assets/img/logo/logo.png" alt="logo" style="max-height: 45px; width: auto;"></a>
+                <a href="index.html" class="ht-offcanvas-logo"><img src="assets/img/logo/logo.png" alt="logo"
+                        style="max-height: 45px; width: auto;"></a>
                 <button class="ht-offcanvas-toggle-close">
                     <i class="fas fa-times"></i>
                 </button>
@@ -141,8 +219,19 @@
     <section class="ht-breadcrumb-area">
         <div class="container">
             <div class="ht-breadcrumb-heading">
-                <h2 class="ht-breadcrumb-title">Services & Pricing</h2>
-                <ul class="ht-breadcrumb-list">
+                <h2 class="ht-breadcrumb-title">Empowering NHS Professionals to Progress with Confidence</h2>
+                <p
+                    style="font-size: 18px; color: #ffffff; margin-top: 15px; max-width: 800px; margin-left: auto; margin-right: auto; font-weight: 500;">
+                    Choose the support that matches your career stage — from targeted CV feedback to full interview
+                    coaching.</p>
+                <p style="font-size: 14px; color: #005EB8; margin-top: 10px; font-weight: 600;">Practical, personalised,
+                    and proven support — tailored to NHS recruitment standards.</p>
+                <div style="margin-top: 25px;">
+                    <a href="consultation.html" class="ht-btn style-2"
+                        style="background-color: #005EB8; border-color: #005EB8; font-weight: 600; box-shadow: 0 4px 15px rgba(0, 94, 184, 0.3);">Book
+                        Free 15-Minute CV Audit</a>
+                </div>
+                <ul class="ht-breadcrumb-list" style="margin-top: 25px;">
                     <li><a href="index.html">Home</a></li>
                     <li><i class="fa-solid fa-chevron-right"></i></li>
                     <li class="active">Services</li>
@@ -161,15 +250,22 @@
                         <div class="ht-price-content">
                             <div class="section-title">
                                 <span class="subtitle wow fadeInUp" data-wow-delay=".2s">Our Services</span>
+                                <div style="width: 60px; height: 3px; background-color: #005EB8; margin: 15px 0;"
+                                    class="wow fadeInUp" data-wow-delay=".3s"></div>
                                 <h2 class="title wow fadeInUp" data-wow-delay=".4s">Practical, Personalised, and Proven
                                     Support</h2>
-                                <p class="wow fadeInUp" data-wow-delay=".6s">From CV reviews to complete career
+                                <p class="wow fadeInUp" data-wow-delay=".6s"
+                                    style="margin-top: 20px; line-height: 1.8;">From CV reviews to complete career
                                     packages, find the right support for every stage of your NHS journey. All services
                                     include expert feedback and actionable guidance.
                                 </p>
+                                <p class="wow fadeInUp" data-wow-delay=".7s"
+                                    style="font-size: 13px; color: #666; margin-top: 15px; font-style: italic;">All
+                                    prices include VAT</p>
                             </div>
-                            <a href="contact.html" class="ht-btn style-2 wow fadeInUp" data-wow-delay=".8s">Book Free
-                                Consultation</a>
+                            <a href="consultation.html" class="ht-btn style-2 wow fadeInUp" data-wow-delay=".8s"
+                                style="background-color: #005EB8; border-color: #005EB8; font-weight: 600; box-shadow: 0 4px 15px rgba(0, 94, 184, 0.3);">Book
+                                Free 15-Minute CV Audit</a>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -190,7 +286,11 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="single-item style-2 wow fadeInUp" data-wow-delay=".6s">
+                            <div class="single-item style-2 wow fadeInUp" data-wow-delay=".6s"
+                                style="position: relative;">
+                                <span
+                                    style="position: absolute; top: 15px; right: 15px; background-color: #FF6B35; color: white; padding: 5px 12px; border-radius: 15px; font-size: 11px; font-weight: 600; text-transform: uppercase;">Most
+                                    Popular</span>
                                 <div class="left">
                                     <span>Supporting Statement</span>
                                     <h2>£125</h2>
@@ -209,35 +309,38 @@
                             </div>
                             <div class="single-item wow fadeInUp" data-wow-delay=".9s">
                                 <div class="left">
-                                    <span>Mock Interview</span>
-                                    <h2>£150</h2>
+                                    <span>Mock Interview Coaching</span>
+                                    <h2>£95</h2>
                                     <a href="consultation.html?service=mock-interview" class="link">Book Now <i
                                             class="fa-solid fa-arrow-right"></i></a>
                                 </div>
                                 <div class="right">
                                     <ul class="price-details">
-                                        <li><i class="fa-solid fa-check"></i>60-minute mock session</li>
-                                        <li><i class="fa-solid fa-check"></i>Real NHS panel questions</li>
-                                        <li><i class="fa-solid fa-check"></i>Live scoring & feedback</li>
-                                        <li><i class="fa-solid fa-check"></i>Personalized action plan</li>
-                                        <li><i class="fa-solid fa-check"></i>Confidence techniques</li>
+                                        <li><i class="fa-solid fa-check"></i>30-minute live practice session</li>
+                                        <li><i class="fa-solid fa-check"></i>Real NHS-style interview questions</li>
+                                        <li><i class="fa-solid fa-check"></i>Confidence and delivery feedback</li>
+                                        <li><i class="fa-solid fa-check"></i>Recorded replay (on request)</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="single-item style-2 wow fadeInUp" data-wow-delay="1.2s">
+                            <div class="single-item style-2 wow fadeInUp" data-wow-delay="1.2s"
+                                style="position: relative;">
+                                <span
+                                    style="position: absolute; top: 15px; right: 15px; background-color: #28a745; color: white; padding: 5px 12px; border-radius: 15px; font-size: 11px; font-weight: 600; text-transform: uppercase;">Best
+                                    Value</span>
                                 <div class="left">
-                                    <span>Complete Package</span>
-                                    <h2>£295</h2>
+                                    <span>Career Boost Package</span>
+                                    <h2>£275</h2>
                                     <a href="consultation.html?service=complete-package" class="link">Book Now <i
                                             class="fa-solid fa-arrow-right"></i></a>
                                 </div>
                                 <div class="right">
                                     <ul class="price-details">
-                                        <li><i class="fa-solid fa-check"></i>CV Review & Optimisation</li>
-                                        <li><i class="fa-solid fa-check"></i>Supporting Statement Rewrite</li>
-                                        <li><i class="fa-solid fa-check"></i>Mock Interview Coaching</li>
-                                        <li><i class="fa-solid fa-check"></i>Ideal for Band 5-8 roles</li>
-                                        <li><i class="fa-solid fa-check"></i>Save £55</li>
+                                        <li><i class="fa-solid fa-check"></i>Complete CV rewrite</li>
+                                        <li><i class="fa-solid fa-check"></i>Supporting statement tailored for your next
+                                            role</li>
+                                        <li><i class="fa-solid fa-check"></i>Mock interview coaching session</li>
+                                        <li><i class="fa-solid fa-check"></i>Career roadmap & guidance call</li>
                                     </ul>
                                 </div>
                             </div>
@@ -255,7 +358,8 @@
         <div class="container">
             <div class="ht-footer-top-wrapper">
                 <div class="ht-footer-top-left">
-                    <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo" style="max-height: 60px; width: auto;"></a>
+                    <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo"
+                            style="max-height: 60px; width: auto;"></a>
                     <p class="desc">Empowering NHS professionals through clarity, <br> confidence, and results.</p>
                 </div>
                 <div class="ht-footer-top-right">
@@ -285,8 +389,10 @@
                     <div class="ht-footer-widget-items">
                         <h5 class="head">Get In Touch</h5>
                         <ul class="link-list">
-                            <li><a href="https://wa.me/4401604908464" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
-                            <li><a href="mailto:daniel@nhscareerboost.co.uk"><i class="fa-solid fa-envelope"></i> daniel@nhscareerboost.co.uk</a></li>
+                            <li><a href="https://wa.me/447506323070" target="_blank"><i
+                                        class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+                            <li><a href="mailto:daniel@nhscareerboost.co.uk"><i class="fa-solid fa-envelope"></i>
+                                    daniel@nhscareerboost.co.uk</a></li>
                             <li><a href="https://www.linkedin.com/in/okojie-daniel-4922b6207" target="_blank"><i
                                         class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
                         </ul>

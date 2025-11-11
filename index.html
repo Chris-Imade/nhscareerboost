@@ -9,6 +9,8 @@
     <meta name="author" content="hurraytheme">
     <meta name="description"
         content="Helping NHS professionals craft standout CVs, supporting statements, and interview stories to progress from Band 4 to Band 8 and beyond.">
+    <meta name="keywords"
+        content="NHS careers, NHS CV, NHS interview coaching, NHS supporting statement, NHS Band 4, NHS Band 5, NHS Band 6, NHS Band 7, NHS Band 8, NHS recruitment">
     <!-- ======== Page title ============ -->
     <title>NHS Career Boost | Advance Your NHS Career with Expert Coaching</title>
     <!--<< Favcion >>-->
@@ -29,6 +31,120 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <!--<< Main.css >>-->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Custom Styles for Enhanced UI -->
+    <style>
+        /* NHS Blue as Primary Button Color */
+        .ht-btn {
+            background-color: #005EB8 !important;
+            border-color: #005EB8 !important;
+            color: white !important;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        /* Darker NHS Blue on Hover */
+        .ht-btn:hover {
+            background-color: #003087 !important;
+            border-color: #003087 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 94, 184, 0.5) !important;
+        }
+
+        /* NHS Blue CTA Button Specific */
+        .ht-btn.style-2 {
+            background-color: #005EB8 !important;
+            border-color: #005EB8 !important;
+            box-shadow: 0 4px 15px rgba(0, 94, 184, 0.3);
+        }
+
+        .ht-btn.style-2:hover {
+            background-color: #003087 !important;
+            border-color: #003087 !important;
+            box-shadow: 0 6px 20px rgba(0, 94, 184, 0.5) !important;
+        }
+
+        /* Service Card Hover Effect */
+        .ht-services-items:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 94, 184, 0.15) !important;
+        }
+
+        /* Testimonial Card Hover Effect */
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 94, 184, 0.15) !important;
+            transition: all 0.3s ease;
+        }
+
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced Animation for Fade-In */
+        .wow {
+            visibility: hidden;
+        }
+
+        .wow.fadeInUp {
+            animation-name: fadeInUp;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        /* Service Icon Hover */
+        .ht-services-items .icon i {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .ht-services-items:hover .icon i {
+            transform: scale(1.1);
+            color: #003087;
+        }
+
+        /* Button Transition */
+        .ht-btn {
+            transition: all 0.3s ease;
+        }
+
+        /* Testimonial Stars Animation */
+        .stars {
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+
+            .ht-services-items,
+            .testimonial-card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body class="body-color">
@@ -78,7 +194,8 @@
                 <div class="ht-menu-wrapper">
                     <div class="ht-menu-left">
                         <div class="ht-menu-logo">
-                            <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo" style="max-height: 50px; width: auto;"></a>
+                            <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo"
+                                    style="max-height: 50px; width: auto;"></a>
                         </div>
                         <div class="ht-menu-main d-none d-lg-block">
                             <nav class="ht-mobile-menu-active">
@@ -108,7 +225,8 @@
     <div class="ht-offcanvas">
         <div class="ht-offcanvas-wrapper">
             <div class="ht-offcanvas-header mb-50">
-                <a href="index.html" class="ht-offcanvas-logo"><img src="assets/img/logo/logo.png" alt="logo" style="max-height: 45px; width: auto;"></a>
+                <a href="index.html" class="ht-offcanvas-logo"><img src="assets/img/logo/logo.png" alt="logo"
+                        style="max-height: 45px; width: auto;"></a>
                 <button class="ht-offcanvas-toggle-close">
                     <i class="fas fa-times"></i>
                 </button>
@@ -123,8 +241,10 @@
             <div class="ht-offcanvas-info mb-50">
                 <h3 class="ht-offcanvas__title">Get In Touch</h3>
                 <span><a href="tel:01604908464"><i class="fa-solid fa-phone"></i> 01604 908464</a></span>
-                <span><a href="mailto:daniel@nhscareerboost.co.uk"><i class="fa-solid fa-envelope"></i> daniel@nhscareerboost.co.uk</a></span>
-                <span><a href="https://www.linkedin.com/in/okojie-daniel-4922b6207" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></span>
+                <span><a href="mailto:daniel@nhscareerboost.co.uk"><i class="fa-solid fa-envelope"></i>
+                        daniel@nhscareerboost.co.uk</a></span>
+                <span><a href="https://www.linkedin.com/in/okojie-daniel-4922b6207" target="_blank"><i
+                            class="fa-brands fa-linkedin"></i> LinkedIn</a></span>
             </div>
         </div>
     </div>
@@ -146,14 +266,20 @@
                     to Advance Their Careers <br>
                     with Confidence
                 </h1>
-                <p class="trust-tagline wow fadeInUp" data-wow-delay=".3s" style="font-size: 14px; color: #005EB8; font-weight: 600; margin-bottom: 15px;">Trusted by NHS professionals across Wales and England.</p>
-                <p class="desc wow fadeInUp" data-wow-delay=".4s">I help NHS professionals present their experience with clarity, confidence, and impact — <br>
+                <p class="trust-tagline wow fadeInUp" data-wow-delay=".3s"
+                    style="font-size: 14px; color: #005EB8; font-weight: 600; margin-bottom: 15px;">Trusted by NHS
+                    professionals across Wales and England.</p>
+                <p class="desc wow fadeInUp" data-wow-delay=".4s">I help NHS professionals present their experience with
+                    clarity, confidence, and impact — <br>
                     from CVs to interviews and beyond.</p>
-                <a href="consultation.html" class="ht-btn style-2 wow fadeInUp" data-wow-delay=".6s">Book Free 15-Minute CV Audit</a>
+                <a href="consultation.html" class="ht-btn style-2 wow fadeInUp" data-wow-delay=".6s"
+                    style="background-color: #005EB8; border-color: #005EB8; font-weight: 600; box-shadow: 0 4px 15px rgba(0, 94, 184, 0.3);">Book
+                    Free 15-Minute CV Audit</a>
             </div>
         </div>
         <div class="ht-hero-img">
-            <img style="max-width: 600px;" class="wow fadeInUp" data-wow-delay=".2s" src="assets/img/hero/1.png" alt="img">
+            <img style="max-width: 600px;" class="wow fadeInUp" data-wow-delay=".2s" src="assets/img/hero/1.png"
+                alt="img">
         </div>
         <div class="ht-hero-counter">
             <div class="count-card float-bob-x">
@@ -175,11 +301,24 @@
                 <span class="subtitle wow fadeInUp" data-wow-delay=".2s">Why Work With Me</span>
                 <h2 class="title wow fadeInUp" data-wow-delay=".4s">Every NHS role tells a story <br> Let's make yours
                     clear</h2>
-                <ul class="why-work-list wow fadeInUp" data-wow-delay=".6s" style="list-style: none; padding: 0; margin-top: 30px; max-width: 800px; margin-left: auto; margin-right: auto; text-align: left;">
-                    <li style="margin-bottom: 15px; padding-left: 30px; position: relative;"><i class="fa-solid fa-check" style="position: absolute; left: 0; color: #005EB8; font-size: 18px;"></i> Deep understanding of NHS recruitment and governance.</li>
-                    <li style="margin-bottom: 15px; padding-left: 30px; position: relative;"><i class="fa-solid fa-check" style="position: absolute; left: 0; color: #005EB8; font-size: 18px;"></i> Proven record helping professionals progress from Band 4–8+.</li>
-                    <li style="margin-bottom: 15px; padding-left: 30px; position: relative;"><i class="fa-solid fa-check" style="position: absolute; left: 0; color: #005EB8; font-size: 18px;"></i> Expertise in digital transformation and leadership roles.</li>
-                    <li style="margin-bottom: 15px; padding-left: 30px; position: relative;"><i class="fa-solid fa-check" style="position: absolute; left: 0; color: #005EB8; font-size: 18px;"></i> Personalised 1-to-1 coaching that gets results.</li>
+                <ul class="why-work-list wow fadeInUp" data-wow-delay=".6s"
+                    style="list-style: none; padding: 0; margin-top: 30px; max-width: 800px; margin-left: auto; margin-right: auto; text-align: left;">
+                    <li style="margin-bottom: 15px; padding-left: 30px; position: relative;"><i
+                            class="fa-solid fa-check"
+                            style="position: absolute; left: 0; color: #005EB8; font-size: 18px;"></i> Deep
+                        understanding of NHS recruitment and governance.</li>
+                    <li style="margin-bottom: 15px; padding-left: 30px; position: relative;"><i
+                            class="fa-solid fa-check"
+                            style="position: absolute; left: 0; color: #005EB8; font-size: 18px;"></i> Proven record
+                        helping professionals progress from Band 4–8+.</li>
+                    <li style="margin-bottom: 15px; padding-left: 30px; position: relative;"><i
+                            class="fa-solid fa-check"
+                            style="position: absolute; left: 0; color: #005EB8; font-size: 18px;"></i> Expertise in
+                        digital transformation and leadership roles.</li>
+                    <li style="margin-bottom: 15px; padding-left: 30px; position: relative;"><i
+                            class="fa-solid fa-check"
+                            style="position: absolute; left: 0; color: #005EB8; font-size: 18px;"></i> Personalised
+                        1-to-1 coaching that gets results.</li>
                 </ul>
             </div>
             <div class="ht-services-wrapper">
@@ -295,6 +434,109 @@
     </section>
     <!-- ht-stats-area-end -->
 
+    <!-- Services Overview Section Start -->
+    <section class="ht-services-area section-padding fix" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title text-center">
+                <span class="subtitle wow fadeInUp" data-wow-delay=".2s">What I Offer</span>
+                <h2 class="title wow fadeInUp" data-wow-delay=".4s">Services Overview</h2>
+                <p class="desc wow fadeInUp" data-wow-delay=".6s">Personalised coaching designed to help you stand out
+                    at every stage</p>
+            </div>
+            <div class="row mt-50">
+                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="ht-services-items mt-30"
+                        style="text-align: center; padding: 40px 30px; background: white; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease;">
+                        <div class="icon" style="margin-bottom: 20px;">
+                            <i class="fa-solid fa-file-lines" style="font-size: 48px; color: #005EB8;"></i>
+                        </div>
+                        <h4 style="margin-bottom: 15px; color: #005EB8;">CV Review & Optimisation</h4>
+                        <p style="margin-bottom: 20px; color: #666;">Professional CV review with detailed feedback and
+                            NHS-specific guidance.</p>
+                        <a href="services.html" class="ht-btn style-3" style="font-size: 14px;">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="ht-services-items mt-30"
+                        style="text-align: center; padding: 40px 30px; background: white; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease;">
+                        <div class="icon" style="margin-bottom: 20px;">
+                            <i class="fa-solid fa-pen-to-square" style="font-size: 48px; color: #005EB8;"></i>
+                        </div>
+                        <h4 style="margin-bottom: 15px; color: #005EB8;">Supporting Statement Coaching</h4>
+                        <p style="margin-bottom: 20px; color: #666;">Craft compelling supporting statements using the
+                            STAR framework.</p>
+                        <a href="services.html" class="ht-btn style-3" style="font-size: 14px;">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="ht-services-items mt-30"
+                        style="text-align: center; padding: 40px 30px; background: white; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease;">
+                        <div class="icon" style="margin-bottom: 20px;">
+                            <i class="fa-solid fa-comments" style="font-size: 48px; color: #005EB8;"></i>
+                        </div>
+                        <h4 style="margin-bottom: 15px; color: #005EB8;">Interview Preparation</h4>
+                        <p style="margin-bottom: 20px; color: #666;">Mock interviews with realistic NHS scenarios and
+                            expert feedback.</p>
+                        <a href="services.html" class="ht-btn style-3" style="font-size: 14px;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Overview Section End -->
+
+    <!-- Testimonials Preview Section Start -->
+    <section class="ht-testimonials-preview section-padding fix">
+        <div class="container">
+            <div class="section-title text-center">
+                <span class="subtitle wow fadeInUp" data-wow-delay=".2s">Success Stories</span>
+                <h2 class="title wow fadeInUp" data-wow-delay=".4s">What Clients Are Saying</h2>
+                <p class="desc wow fadeInUp" data-wow-delay=".6s">Real feedback from NHS professionals who secured their
+                    dream roles</p>
+            </div>
+            <div class="row mt-50">
+                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="testimonial-card"
+                        style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); height: 100%;">
+                        <div class="stars" style="color: #FFD700; font-size: 18px; margin-bottom: 15px;">⭐️⭐️⭐️⭐️⭐️
+                        </div>
+                        <p style="font-style: italic; color: #333; margin-bottom: 20px; line-height: 1.6;">"Daniel
+                            helped me refine my supporting statement — I got shortlisted the same week and later secured
+                            my Band 6 promotion."</p>
+                        <h5 style="color: #005EB8; font-weight: 600; margin-bottom: 5px;">Aisha</h5>
+                        <p style="color: #666; font-size: 14px;">Project Officer</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="testimonial-card"
+                        style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); height: 100%;">
+                        <div class="stars" style="color: #FFD700; font-size: 18px; margin-bottom: 15px;">⭐️⭐️⭐️⭐️⭐️
+                        </div>
+                        <p style="font-style: italic; color: #333; margin-bottom: 20px; line-height: 1.6;">"After two
+                            unsuccessful attempts at a Band 7 post, Daniel's coaching helped me finally get shortlisted
+                            and perform confidently at interview."</p>
+                        <h5 style="color: #005EB8; font-weight: 600; margin-bottom: 5px;">Sarah</h5>
+                        <p style="color: #666; font-size: 14px;">Senior Nurse Manager</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="testimonial-card"
+                        style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); height: 100%;">
+                        <div class="stars" style="color: #FFD700; font-size: 18px; margin-bottom: 15px;">⭐️⭐️⭐️⭐️⭐️
+                        </div>
+                        <p style="font-style: italic; color: #333; margin-bottom: 20px; line-height: 1.6;">"The mock
+                            interview was a game changer — realistic, structured, and confidence-boosting."</p>
+                        <h5 style="color: #005EB8; font-weight: 600; margin-bottom: 5px;">Tom</h5>
+                        <p style="color: #666; font-size: 14px;">Digital Analyst</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-50 wow fadeInUp" data-wow-delay=".8s">
+                <a href="testimonials.html" class="ht-btn style-3">Read More Success Stories</a>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Preview Section End -->
 
     <!-- ht cta area start -->
     <section class="ht-blog-area section-padding fix">
@@ -306,7 +548,9 @@
                 <p class="desc wow fadeInUp" data-wow-delay=".6s">Book your free 15-minute consultation — no sales
                     pitch, just honest feedback.</p>
                 <div class="mt-40 wow fadeInUp" data-wow-delay=".8s">
-                    <a href="contact.html" class="ht-btn style-2">Book Your Free Consultation</a>
+                    <a href="consultation.html" class="ht-btn style-2"
+                        style="background-color: #005EB8; border-color: #005EB8; font-weight: 600; box-shadow: 0 4px 15px rgba(0, 94, 184, 0.3);">Book
+                        Free 15-Minute CV Audit</a>
                 </div>
             </div>
         </div>
@@ -318,7 +562,8 @@
         <div class="container">
             <div class="ht-footer-top-wrapper">
                 <div class="ht-footer-top-left wow fadeInUp" data-wow-delay=".2s">
-                    <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo" style="max-height: 60px; width: auto;"></a>
+                    <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo"
+                            style="max-height: 60px; width: auto;"></a>
                     <p class="desc">Empowering NHS professionals through clarity, <br> confidence, and results.</p>
                 </div>
                 <div class="ht-footer-top-right wow fadeInUp" data-wow-delay=".4s">
@@ -348,8 +593,10 @@
                     <div class="ht-footer-widget-items wow fadeInUp" data-wow-delay=".9s">
                         <h5 class="head">Get In Touch</h5>
                         <ul class="link-list">
-                            <li><a href="https://wa.me/4401604908464" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
-                            <li><a href="mailto:daniel@nhscareerboost.co.uk"><i class="fa-solid fa-envelope"></i> daniel@nhscareerboost.co.uk</a></li>
+                            <li><a href="https://wa.me/447506323070" target="_blank"><i
+                                        class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+                            <li><a href="mailto:daniel@nhscareerboost.co.uk"><i class="fa-solid fa-envelope"></i>
+                                    daniel@nhscareerboost.co.uk</a></li>
                             <li><a href="https://www.linkedin.com/in/okojie-daniel-4922b6207" target="_blank"><i
                                         class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
                         </ul>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="hurraytheme">
+    <meta name="description" content="Booking confirmed - NHS Career Boost">
+    <!-- ======== Page title ============ -->
+    <title>Booking Confirmed | NHS Career Boost</title>
+    <!--<< Favcion >>-->
+    <link rel="shortcut icon" href="assets/img/favicon.svg">
+    <!--<< Bootstrap min.css >>-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!--<< All Min Css >>-->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!--<< Animate.css >>-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!--<< Magnific Popup.css >>-->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!--<< MeanMenu.css >>-->
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+    <!--<< Swiper Bundle.css >>-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!--<< Nice Select.css >>-->
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <!--<< Main.css >>-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        /* NHS Blue Button System */
+        .ht-btn {
+            background-color: #005EB8 !important;
+            border-color: #005EB8 !important;
+            color: white !important;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .ht-btn:hover {
+            background-color: #003087 !important;
+            border-color: #003087 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 94, 184, 0.5) !important;
+        }
+        
+        .confirmation-icon {
+            width: 100px;
+            height: 100px;
+            background-color: #28a745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            animation: scaleIn 0.5s ease-out;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        .confirmation-box {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 94, 184, 0.15);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .confirmation-box {
+                padding: 40px 20px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .button-group .ht-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="body-color">
+
+    <!-- preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Back To Top Start -->
+    <button class="ht-back-to-top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+    <!-- Back To Top End -->
+
+    <!-- ht-header-area start -->
+    <header class="ht-header-area">
+        <div class="ht-header-top">
+            <div class="container">
+                <div class="ht-header-top-wrapper">
+                    <ul class="ht-header-top-left">
+                        <li><a href="mailto:daniel@nhscareerboost.co.uk"><i class="fa-solid fa-envelope"></i>
+                                daniel@nhscareerboost.co.uk</a></li>
+                    </ul>
+                    <div class="ht-header-top-right">
+                        <div class="ht-header-top-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ht-main-header area start -->
+        <div class="ht-main-header header-1" id="header-sticky">
+            <div class="container">
+                <div class="ht-menu-wrapper">
+                    <div class="ht-menu-left">
+                        <div class="ht-menu-logo">
+                            <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo" style="max-height: 50px; width: auto;"></a>
+                        </div>
+                        <div class="ht-menu-main d-none d-lg-block">
+                            <nav class="ht-mobile-menu-active">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="services.html">Services</a></li>
+                                    <li><a href="testimonials.html">Testimonials</a></li>
+                                    <li><a href="consultation.html">Book Now</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="ht-menu-right">
+                        <a href="contact.html" class="ht-btn d-none d-lg-block">Contact Us</a>
+                        <button class="ht-menu-btn d-lg-none offcanvas-toggle">
+                            <i class="fa-solid fa-bars-staggered"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ht-header-area end -->
+
+    <!-- offcanvas for navigation -->
+    <div class="ht-offcanvas">
+        <div class="ht-offcanvas-wrapper">
+            <div class="ht-offcanvas-header mb-50">
+                <a href="index.html" class="ht-offcanvas-logo"><img src="assets/img/logo/logo.png" alt="logo" style="max-height: 45px; width: auto;"></a>
+                <button class="ht-offcanvas-toggle-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="ht-offcanvas-menu d-xl-none mb-50">
+                <nav></nav>
+            </div>
+            <div class="ht-offcanvas-content d-none d-xl-block mb-50">
+                <h2 class="ht-offcanvas-content__title">NHS Career Boost</h2>
+                <p>Empowering NHS professionals through clarity, confidence, and results.</p>
+            </div>
+            <div class="ht-offcanvas-contact mb-50">
+                <h3 class="ht-offcanvas__title">Contact Info</h3>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:daniel@nhscareerboost.co.uk">daniel@nhscareerboost.co.uk</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="ht-offcanvas-social mb-50">
+                <h3 class="ht-offcanvas__title">Follow Us</h3>
+
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- offcanvas overlay -->
+    <div class="ht-offcanvas-overlay"></div>
+
+    <!-- ht breadcrumb area start -->
+    <section class="ht-breadcrumb-area">
+        <div class="container">
+            <div class="ht-breadcrumb-heading">
+                <h2 class="ht-breadcrumb-title">Booking Confirmed</h2>
+                <ul class="ht-breadcrumb-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><i class="fa-solid fa-chevron-right"></i></li>
+                    <li><a href="consultation.html">Book Now</a></li>
+                    <li><i class="fa-solid fa-chevron-right"></i></li>
+                    <li class="active">Confirmation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- ht breadcrumb area end -->
+
+    <!-- Confirmation Section -->
+    <section class="section-padding" style="padding: 100px 0;">
+        <div class="container">
+            <div class="confirmation-box">
+                <div class="confirmation-icon">
+                    <i class="fa-solid fa-check" style="color: white; font-size: 50px;"></i>
+                </div>
+                
+                <h1 style="color: #005EB8; font-size: 36px; font-weight: 700; margin-bottom: 20px;">Thank You for Your Booking!</h1>
+                
+                <p style="font-size: 18px; color: #333; line-height: 1.8; margin-bottom: 30px;">
+                    Your payment has been successfully processed. You'll receive a confirmation email shortly with next steps and details about your consultation.
+                </p>
+                
+                <div style="background-color: #f0f7ff; padding: 20px; border-radius: 10px; border-left: 4px solid #005EB8; margin-bottom: 30px;">
+                    <p style="margin: 0; font-size: 16px; color: #333; line-height: 1.6;">
+                        <i class="fa-solid fa-info-circle" style="color: #005EB8; margin-right: 8px;"></i>
+                        <strong>What happens next?</strong><br>
+                        We'll send you an email within the next few minutes with your booking reference and instructions on how to schedule your session.
+                    </p>
+                </div>
+                
+                <div class="button-group">
+                    <a href="index.html" class="ht-btn" style="padding: 15px 30px;">
+                        <i class="fa-solid fa-home"></i> Return to Home
+                    </a>
+                    <a href="contact.html" class="ht-btn" style="padding: 15px 30px;">
+                        <i class="fa-solid fa-envelope"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Confirmation Section End -->
+
+    <!-- ht-footer-area-start -->
+    <footer class="ht-footer-area fix">
+        <div class="container">
+            <div class="ht-footer-top-wrapper">
+                <div class="ht-footer-top-left">
+                    <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo" style="max-height: 60px; width: auto;"></a>
+                    <p class="desc">Empowering NHS professionals through clarity, <br> confidence, and results.</p>
+                </div>
+                <div class="ht-footer-top-right">
+                    <div class="ht-footer-top-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="ht-footer-main-wrapper">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="ht-footer-widget">
+                            <h3 class="ht-footer-widget__title">Quick Links</h3>
+                            <ul class="ht-footer-widget__list">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="ht-footer-widget">
+                            <h3 class="ht-footer-widget__title">Services</h3>
+                            <ul class="ht-footer-widget__list">
+                                <li><a href="services.html">CV Review</a></li>
+                                <li><a href="services.html">Supporting Statement</a></li>
+                                <li><a href="services.html">Mock Interview</a></li>
+                                <li><a href="services.html">Complete Package</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="ht-footer-widget">
+                            <h3 class="ht-footer-widget__title">Contact</h3>
+                            <ul class="ht-footer-widget__list">
+                                <li><a href="mailto:daniel@nhscareerboost.co.uk">daniel@nhscareerboost.co.uk</a></li>
+                                <li><a href="consultation.html">Book Consultation</a></li>
+                                <li><a href="contact.html">Get in Touch</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="ht-footer-widget">
+                            <h3 class="ht-footer-widget__title">Newsletter</h3>
+                            <p class="desc">Subscribe for career tips and updates</p>
+                            <form class="ht-footer-widget__form">
+                                <input type="email" placeholder="Your email">
+                                <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ht-footer-bottom">
+            <div class="container">
+                <div class="ht-footer-bottom-wrapper">
+                    <p class="ht-footer-bottom__copyright">© 2024 NHS Career Boost. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ht-footer-area-end -->
+
+    <!--<< All JS Plugins >>-->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!--<< Viewport Js >>-->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!--<< Bootstrap Js >>-->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!--<< Nice Select Js >>-->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!--<< Waypoints Js >>-->
+    <script src="assets/js/jquery.waypoints.js"></script>
+    <!--<< Counterup Js >>-->
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!--<< Swiper Slider Js >>-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!--<< MeanMenu Js >>-->
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <!--<< Magnific Popup Js >>-->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!--<< Wow Animation Js >>-->
+    <script src="assets/js/wow.min.js"></script>
+    <!--<< Main.js >>-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -6,10 +6,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="hurraytheme">
-    <meta name="description" content="Book Your Consultation - Choose Your Package - NHS Career Boost by Daniel Okojie">
+    <meta name="author" content="Daniel Okojie">
+    <meta name="description"
+        content="Book your NHS Career Boost consultation securely online. Choose from expert CV reviews, supporting statements, or interview coaching to move your career forward.">
+    <meta name="keywords"
+        content="NHS career coaching, NHS CV review, NHS supporting statement, NHS interview coaching, NHS career consultation, book NHS career help, NHS job application support">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
     <!-- ======== Page title ============ -->
-    <title>Book Consultation | NHS Career Boost</title>
+    <title>Book Your Consultation | NHS Career Boost – Secure Online Booking</title>
+
+    <!-- ======== Open Graph Meta Tags ========== -->
+    <meta property="og:title" content="Book Your Consultation | NHS Career Boost – Secure Online Booking">
+    <meta property="og:description"
+        content="Book your NHS Career Boost consultation securely online. Choose from expert CV reviews, supporting statements, or interview coaching to move your career forward.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nhscareerboost.co.uk/consultation.html">
+    <meta property="og:image" content="https://nhscareerboost.co.uk/assets/img/logo/logo.png">
+    <meta property="og:site_name" content="NHS Career Boost">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- ======== Twitter Card Meta Tags ========== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Book Your Consultation | NHS Career Boost – Secure Online Booking">
+    <meta name="twitter:description"
+        content="Book your NHS Career Boost consultation securely online. Choose from expert CV reviews, supporting statements, or interview coaching to move your career forward.">
+    <meta name="twitter:image" content="https://nhscareerboost.co.uk/assets/img/logo/logo.png">
+
+    <!-- ======== Canonical URL ========== -->
+    <link rel="canonical" href="https://nhscareerboost.co.uk/consultation.html">
     <!--<< Favcion >>-->
     <link rel="shortcut icon" href="assets/img/favicon.svg">
     <!--<< Bootstrap min.css >>-->
@@ -49,9 +76,8 @@
         }
 
         .service-radio-card:hover {
-            border-color: #0066cc;
-            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.15);
-            transform: translateY(-2px);
+            background: #f0f7ff;
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
         }
 
         .service-radio-card input[type="radio"] {
@@ -324,7 +350,9 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .secure-badge {
@@ -338,7 +366,127 @@
             color: #28a745;
             margin-right: 5px;
         }
+
+        /* NHS Blue Button System */
+        .ht-btn {
+            background-color: #005EB8 !important;
+            border-color: #005EB8 !important;
+            color: white !important;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .ht-btn:hover {
+            background-color: #003087 !important;
+            border-color: #003087 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 94, 184, 0.5) !important;
+        }
+
+        .ht-btn.style-2 {
+            background-color: #005EB8 !important;
+            border-color: #005EB8 !important;
+            box-shadow: 0 4px 15px rgba(0, 94, 184, 0.3);
+        }
+
+        .ht-btn.style-2:hover {
+            background-color: #003087 !important;
+            border-color: #003087 !important;
+            box-shadow: 0 6px 20px rgba(0, 94, 184, 0.5) !important;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Section Spacing */
+        .section-title {
+            margin-bottom: 50px;
+        }
+
+        .service-radio-group {
+            margin-bottom: 40px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .ht-breadcrumb-title {
+                font-size: 26px !important;
+            }
+
+            .ht-price-area {
+                padding: 60px 0 !important;
+            }
+
+            .section-title {
+                margin-bottom: 30px;
+            }
+
+            .col-lg-7,
+            .col-lg-5 {
+                margin-bottom: 30px;
+            }
+        }
     </style>
+
+    <!-- ======== Structured Data (JSON-LD) ========== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Career Coaching",
+        "provider": {
+            "@type": "Person",
+            "name": "Daniel Okojie",
+            "jobTitle": "NHS Career Coach",
+            "description": "NHS digital transformation and workforce specialist with over 10 years of experience"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "United Kingdom"
+        },
+        "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://nhscareerboost.co.uk/consultation.html",
+            "servicePhone": "",
+            "serviceLocation": {
+                "@type": "Place",
+                "name": "Online"
+            }
+        },
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "CV Review & Optimisation",
+                "price": "75",
+                "priceCurrency": "GBP",
+                "description": "Fully marked-up CV with 15-minute feedback call, tailoring guidance, and band-specific tips"
+            },
+            {
+                "@type": "Offer",
+                "name": "Supporting Statement",
+                "price": "125",
+                "priceCurrency": "GBP",
+                "description": "One-to-one discussion with fully rewritten statement, STAR framework guidance, and 5 working days delivery"
+            },
+            {
+                "@type": "Offer",
+                "name": "Mock Interview Coaching",
+                "price": "95",
+                "priceCurrency": "GBP",
+                "description": "30-minute live practice session with real NHS-style interview questions and confidence feedback"
+            },
+            {
+                "@type": "Offer",
+                "name": "Career Boost Package",
+                "price": "275",
+                "priceCurrency": "GBP",
+                "description": "Complete CV rewrite, supporting statement, mock interview coaching, and career roadmap guidance"
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body class="body-color">
@@ -372,8 +520,7 @@
                         <ul class="right">
                             <li><i class="fa-solid fa-envelope"></i><a
                                     href="mailto:daniel@nhscareerboost.co.uk">daniel@nhscareerboost.co.uk</a></li>
-                            <li><i class="fa-solid fa-phone"></i><a
-                                    href="tel:01604908464">01604 908464</a></li>
+                            <li><i class="fa-solid fa-phone"></i><a href="tel:01604908464">01604 908464</a></li>
                         </ul>
                     </div>
                 </div>
@@ -386,7 +533,8 @@
                 <div class="ht-menu-wrapper">
                     <div class="ht-menu-left">
                         <div class="ht-menu-logo">
-                            <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo" style="max-height: 50px; width: auto;"></a>
+                            <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo"
+                                    style="max-height: 50px; width: auto;"></a>
                         </div>
                         <div class="ht-menu-main d-none d-lg-block">
                             <nav class="ht-mobile-menu-active">
@@ -416,7 +564,8 @@
     <div class="ht-offcanvas">
         <div class="ht-offcanvas-wrapper">
             <div class="ht-offcanvas-header mb-50">
-                <a href="index.html" class="ht-offcanvas-logo"><img src="assets/img/logo/logo.png" alt="logo" style="max-height: 45px; width: auto;"></a>
+                <a href="index.html" class="ht-offcanvas-logo"><img src="assets/img/logo/logo.png" alt="logo"
+                        style="max-height: 45px; width: auto;"></a>
                 <button class="ht-offcanvas-toggle-close">
                     <i class="fas fa-times"></i>
                 </button>
@@ -451,8 +600,18 @@
     <section class="ht-breadcrumb-area">
         <div class="container">
             <div class="ht-breadcrumb-heading">
-                <h2 class="ht-breadcrumb-title">Book Your Consultation</h2>
-                <ul class="ht-breadcrumb-list">
+                <h2 class="ht-breadcrumb-title">Book Your Career Consultation</h2>
+                <p
+                    style="font-size: 18px; color: #ffffff; margin-top: 15px; max-width: 800px; margin-left: auto; margin-right: auto; font-weight: 500;">
+                    Select the service that fits your needs and take the next step towards your NHS career goal.</p>
+                <p style="font-size: 14px; color: #ffffff; margin-top: 10px; font-style: italic;">All sessions are
+                    confidential, personalised, and led by a coach with over 10 years' NHS experience.</p>
+                <div style="margin-top: 25px;">
+                    <a href="contact.html" class="ht-btn style-2"
+                        style="background-color: #005EB8; border-color: #005EB8; font-weight: 600; box-shadow: 0 4px 15px rgba(0, 94, 184, 0.3);">Book
+                        Free Consultation</a>
+                </div>
+                <ul class="ht-breadcrumb-list" style="margin-top: 25px;">
                     <li><a href="index.html">Home</a></li>
                     <li><i class="fa-solid fa-chevron-right"></i></li>
                     <li class="active">Book Now</li>
@@ -463,7 +622,7 @@
     <!-- ht breadcrumb area start -->
 
     <!-- Consultation Checkout Area -->
-    <section class="ht-price-area section-padding">
+    <section class="ht-price-area section-padding" style="padding: 80px 0;">
         <div class="container">
             <div class="row">
                 <!-- Left Side - Package Selection & Info -->
@@ -481,51 +640,183 @@
 
                         <div class="service-radio-group">
                             <!-- CV Review -->
-                            <label class="service-radio-card" for="cv-review">
+                            <label class="service-radio-card" for="cv-review"
+                                style="box-shadow: 0 3px 15px rgba(0,0,0,0.1); margin-bottom: 20px;">
                                 <input type="radio" id="cv-review" name="service" value="cv-review" checked>
                                 <div class="radio-content">
                                     <div class="radio-header">
-                                        <span class="radio-check"></span>
-                                        <h4>CV Review & Optimisation</h4>
+                                        <div style="display: flex; align-items: center; gap: 15px;">
+                                            <div
+                                                style="width: 50px; height: 50px; background-color: #005EB8; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                                <i class="fa-solid fa-file-lines"
+                                                    style="color: white; font-size: 24px;"></i>
+                                            </div>
+                                            <div>
+                                                <span class="radio-check"></span>
+                                                <h4 style="margin: 0;">CV Review & Optimisation</h4>
+                                            </div>
+                                        </div>
                                     </div>
                                     <p class="price">£75</p>
+                                </div>
+                                <button type="button" class="btn btn-sm btn-link" onclick="toggleDetails('cv-details')"
+                                    style="margin-top: 10px; color: #005EB8; text-decoration: none; font-size: 14px;">
+                                    <i class="fa-solid fa-chevron-down"></i> What's Included
+                                </button>
+                                <div id="cv-details"
+                                    style="display: none; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+                                    <ul style="list-style: none; padding: 0; margin: 0;">
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> Fully marked-up CV</li>
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> 15-minute feedback call
+                                        </li>
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> Tailoring guidance</li>
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> Band-specific tips</li>
+                                    </ul>
                                 </div>
                             </label>
 
                             <!-- Supporting Statement -->
-                            <label class="service-radio-card" for="supporting-statement">
+                            <label class="service-radio-card" for="supporting-statement"
+                                style="box-shadow: 0 3px 15px rgba(0,0,0,0.1); margin-bottom: 20px; position: relative;">
+                                <span
+                                    style="position: absolute; top: 15px; right: 15px; background-color: #FF6B35; color: white; padding: 5px 12px; border-radius: 15px; font-size: 11px; font-weight: 600; text-transform: uppercase;">Most
+                                    Popular</span>
                                 <input type="radio" id="supporting-statement" name="service"
                                     value="supporting-statement">
                                 <div class="radio-content">
                                     <div class="radio-header">
-                                        <span class="radio-check"></span>
-                                        <h4>Supporting Statement</h4>
+                                        <div style="display: flex; align-items: center; gap: 15px;">
+                                            <div
+                                                style="width: 50px; height: 50px; background-color: #005EB8; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                                <i class="fa-solid fa-pen-to-square"
+                                                    style="color: white; font-size: 24px;"></i>
+                                            </div>
+                                            <div>
+                                                <span class="radio-check"></span>
+                                                <h4 style="margin: 0;">Supporting Statement</h4>
+                                            </div>
+                                        </div>
                                     </div>
                                     <p class="price">£125</p>
+                                </div>
+                                <button type="button" class="btn btn-sm btn-link"
+                                    onclick="toggleDetails('statement-details')"
+                                    style="margin-top: 10px; color: #005EB8; text-decoration: none; font-size: 14px;">
+                                    <i class="fa-solid fa-chevron-down"></i> What's Included
+                                </button>
+                                <div id="statement-details"
+                                    style="display: none; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+                                    <ul style="list-style: none; padding: 0; margin: 0;">
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> One-to-one discussion
+                                        </li>
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> Fully rewritten
+                                            statement</li>
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> STAR framework guidance
+                                        </li>
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> Top 5 STAR mistakes
+                                            guide</li>
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> 5 working days delivery
+                                        </li>
+                                    </ul>
                                 </div>
                             </label>
 
                             <!-- Mock Interview -->
-                            <label class="service-radio-card" for="mock-interview">
+                            <label class="service-radio-card" for="mock-interview"
+                                style="box-shadow: 0 3px 15px rgba(0,0,0,0.1); margin-bottom: 20px;">
                                 <input type="radio" id="mock-interview" name="service" value="mock-interview">
                                 <div class="radio-content">
                                     <div class="radio-header">
-                                        <span class="radio-check"></span>
-                                        <h4>Mock Interview Coaching</h4>
+                                        <div style="display: flex; align-items: center; gap: 15px;">
+                                            <div
+                                                style="width: 50px; height: 50px; background-color: #005EB8; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                                <i class="fa-solid fa-comments"
+                                                    style="color: white; font-size: 24px;"></i>
+                                            </div>
+                                            <div>
+                                                <span class="radio-check"></span>
+                                                <h4 style="margin: 0;">Mock Interview Coaching</h4>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="price">£150</p>
+                                    <p class="price">£95</p>
+                                </div>
+                                <button type="button" class="btn btn-sm btn-link"
+                                    onclick="toggleDetails('interview-details')"
+                                    style="margin-top: 10px; color: #005EB8; text-decoration: none; font-size: 14px;">
+                                    <i class="fa-solid fa-chevron-down"></i> What's Included
+                                </button>
+                                <div id="interview-details"
+                                    style="display: none; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+                                    <ul style="list-style: none; padding: 0; margin: 0;">
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> 30-minute live practice
+                                            session</li>
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> Real NHS-style interview
+                                            questions</li>
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> Confidence and delivery
+                                            feedback</li>
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> Recorded replay (on
+                                            request)</li>
+                                    </ul>
                                 </div>
                             </label>
 
                             <!-- Complete Package -->
-                            <label class="service-radio-card" for="complete-package">
+                            <label class="service-radio-card" for="complete-package"
+                                style="box-shadow: 0 3px 15px rgba(0,0,0,0.1); margin-bottom: 20px; position: relative; border: 2px solid #28a745;">
+                                <span
+                                    style="position: absolute; top: 15px; right: 15px; background-color: #28a745; color: white; padding: 5px 12px; border-radius: 15px; font-size: 11px; font-weight: 600; text-transform: uppercase;">Best
+                                    Value</span>
                                 <input type="radio" id="complete-package" name="service" value="complete-package">
                                 <div class="radio-content">
                                     <div class="radio-header">
-                                        <span class="radio-check"></span>
-                                        <h4>Complete Career Boost Package</h4>
+                                        <div style="display: flex; align-items: center; gap: 15px;">
+                                            <div
+                                                style="width: 50px; height: 50px; background-color: #28a745; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                                <i class="fa-solid fa-star" style="color: white; font-size: 24px;"></i>
+                                            </div>
+                                            <div>
+                                                <span class="radio-check"></span>
+                                                <h4 style="margin: 0;">Career Boost Package</h4>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="price">£295 <span class="save-badge">Save £55</span></p>
+                                    <p class="price">£275 <span class="save-badge" style="background: #FF6B35;">£20
+                                            Off</span></p>
+                                </div>
+                                <button type="button" class="btn btn-sm btn-link"
+                                    onclick="toggleDetails('package-details')"
+                                    style="margin-top: 10px; color: #005EB8; text-decoration: none; font-size: 14px;">
+                                    <i class="fa-solid fa-chevron-down"></i> What's Included
+                                </button>
+                                <div id="package-details"
+                                    style="display: none; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+                                    <ul style="list-style: none; padding: 0; margin: 0;">
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> Complete CV rewrite</li>
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> Supporting statement
+                                            tailored for your next role</li>
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> Mock interview coaching
+                                            session</li>
+                                        <li style="margin-bottom: 8px; color: #666;"><i class="fa-solid fa-check"
+                                                style="color: #28a745; margin-right: 8px;"></i> Career roadmap &
+                                            guidance call</li>
+                                    </ul>
                                 </div>
                             </label>
                         </div>
@@ -556,12 +847,47 @@
                     <!-- Payment Section (Initially Visible) -->
                     <div id="payment-section">
                         <div class="card shadow p-4">
-                            <h4 class="mb-4">Complete Your Booking</h4>
-                            <p class="mb-4">Click below to proceed with payment via Stripe</p>
-                            <button id="stripe-pay-btn" class="ht-btn style-2 w-100">
-                                <i class="fa-brands fa-stripe"></i> Pay with Stripe
+                            <h4 class="mb-4" style="color: #333; font-weight: 600;">Complete Your Booking</h4>
+
+                            <!-- Reassurance Text -->
+                            <div
+                                style="background-color: #f0f7ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #005EB8;">
+                                <p style="margin: 0; font-size: 14px; color: #333; line-height: 1.6;">
+                                    <i class="fa-solid fa-shield-halved" style="color: #005EB8; margin-right: 8px;"></i>
+                                    You'll be redirected to Stripe for secure checkout. Payment confirmation and next
+                                    steps will be sent to your email immediately.
+                                </p>
+                            </div>
+
+                            <button id="stripe-pay-btn" class="ht-btn style-2 w-100"
+                                style="padding: 15px; font-size: 16px;">
+                                <i class="fa-brands fa-stripe"></i> Pay Securely with Stripe
                             </button>
-                            <p class="text-muted mt-3 small text-center">Secure payment powered by Stripe</p>
+
+                            <!-- Trust Badges -->
+                            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+                                <div
+                                    style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 15px;">
+                                    <div style="text-align: center;">
+                                        <i class="fa-solid fa-lock"
+                                            style="color: #28a745; font-size: 24px; margin-bottom: 5px;"></i>
+                                        <p style="margin: 0; font-size: 12px; color: #666; font-weight: 600;">SSL
+                                            Encrypted</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <i class="fa-brands fa-stripe"
+                                            style="color: #635bff; font-size: 24px; margin-bottom: 5px;"></i>
+                                        <p style="margin: 0; font-size: 12px; color: #666; font-weight: 600;">Secure via
+                                            Stripe</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <i class="fa-solid fa-circle-check"
+                                            style="color: #28a745; font-size: 24px; margin-bottom: 5px;"></i>
+                                        <p style="margin: 0; font-size: 12px; color: #666; font-weight: 600;">No Hidden
+                                            Fees</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -630,12 +956,14 @@
             <form id="stripe-payment-form">
                 <div class="stripe-form-group">
                     <label for="customer-name">Full Name *</label>
-                    <input type="text" id="customer-name" name="name" required placeholder="John Smith" autocomplete="name">
+                    <input type="text" id="customer-name" name="name" required placeholder="John Smith"
+                        autocomplete="name">
                 </div>
 
                 <div class="stripe-form-group">
                     <label for="customer-email">Email Address *</label>
-                    <input type="email" id="customer-email" name="email" required placeholder="john@example.com" autocomplete="email">
+                    <input type="email" id="customer-email" name="email" required placeholder="john@example.com"
+                        autocomplete="email">
                 </div>
 
                 <div class="stripe-form-group">
@@ -661,7 +989,8 @@
         <div class="container">
             <div class="ht-footer-top-wrapper">
                 <div class="ht-footer-top-left">
-                    <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo" style="max-height: 60px; width: auto;"></a>
+                    <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo"
+                            style="max-height: 60px; width: auto;"></a>
                     <p class="desc">Empowering NHS professionals through clarity, <br> confidence, and results.</p>
                 </div>
                 <div class="ht-footer-top-right">
@@ -691,8 +1020,10 @@
                     <div class="ht-footer-widget-items">
                         <h5 class="head">Get In Touch</h5>
                         <ul class="link-list">
-                            <li><a href="https://wa.me/4401604908464" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
-                            <li><a href="mailto:daniel@nhscareerboost.co.uk"><i class="fa-solid fa-envelope"></i> daniel@nhscareerboost.co.uk</a></li>
+                            <li><a href="https://wa.me/447506323070" target="_blank"><i
+                                        class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+                            <li><a href="mailto:daniel@nhscareerboost.co.uk"><i class="fa-solid fa-envelope"></i>
+                                    daniel@nhscareerboost.co.uk</a></li>
                             <li><a href="https://www.linkedin.com/in/okojie-daniel-4922b6207" target="_blank"><i
                                         class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
                         </ul>
@@ -734,6 +1065,25 @@
     <script src="https://js.stripe.com/v3/"></script>
     <!--<< Consultation.js >>-->
     <script src="assets/js/consultation.js"></script>
+
+    <!-- Toggle Details Function -->
+    <script>
+        function toggleDetails(detailsId) {
+            const detailsElement = document.getElementById(detailsId);
+            const button = event.target.closest('button');
+            const icon = button.querySelector('i');
+
+            if (detailsElement.style.display === 'none' || detailsElement.style.display === '') {
+                detailsElement.style.display = 'block';
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                detailsElement.style.display = 'none';
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+    </script>
 </body>
 
 </html>

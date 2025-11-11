@@ -42,24 +42,22 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'mock-interview': {
             name: 'Mock Interview Coaching',
-            price: 150,
+            price: 95,
             features: [
-                '60-minute mock session',
-                'Real NHS panel questions',
-                'Live scoring & feedback',
-                'Personalized action plan',
-                'Confidence techniques'
+                '30-minute live practice session',
+                'Real NHS-style interview questions',
+                'Confidence and delivery feedback',
+                'Recorded replay (on request)'
             ]
         },
         'complete-package': {
-            name: 'Complete Career Boost Package',
-            price: 295,
+            name: 'Career Boost Package',
+            price: 275,
             features: [
-                'CV Review & Optimisation',
-                'Supporting Statement Rewrite',
-                'Mock Interview Coaching',
-                'Ideal for Band 5-8 roles',
-                'Save £55'
+                'Complete CV rewrite',
+                'Supporting statement tailored for your next role',
+                'Mock interview coaching session',
+                'Career roadmap & guidance call'
             ]
         }
     };
@@ -214,13 +212,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const result = await response.json();
 
                 if (result.success) {
-                    // Success
-                    alert('✅ Thank you! Your booking has been confirmed. You will receive a confirmation email shortly at ' + data.email);
-                    
-                    // Redirect to home page after 2 seconds
-                    setTimeout(function() {
-                        window.location.href = 'index.html';
-                    }, 2000);
+                    // Success - redirect to confirmation page
+                    window.location.href = 'booking-confirmation.html';
                 } else {
                     // Error from server
                     const errors = result.errors?.map(e => e.message).join('\n') || result.message;
