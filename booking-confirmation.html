@@ -285,6 +285,56 @@
             consultation.
           </p>
 
+          <!-- Appointment Details -->
+          <div id="appointment-details" style="display: none; margin-bottom: 30px;">
+            <div
+              style="
+                background-color: #f0f7ff;
+                padding: 25px;
+                border-radius: 10px;
+                border-left: 4px solid #005eb8;
+                text-align: left;
+              "
+            >
+              <h4 style="color: #005eb8; margin-bottom: 15px; font-weight: 600;">
+                <i class="fa-solid fa-calendar-check"></i> Your Appointment Details
+              </h4>
+              <div style="font-size: 16px; color: #333; line-height: 2;">
+                <p style="margin: 5px 0;"><strong>Service:</strong> <span id="detail-service"></span></p>
+                <p style="margin: 5px 0;"><strong>Date:</strong> <span id="detail-date"></span></p>
+                <p style="margin: 5px 0;"><strong>Time:</strong> <span id="detail-time"></span> (UK Time)</p>
+                <p style="margin: 5px 0;"><strong>Name:</strong> <span id="detail-name"></span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add to Calendar Section -->
+          <div id="calendar-section" style="display: none; margin-bottom: 30px;">
+            <h4 style="color: #333; margin-bottom: 20px; font-weight: 600;">
+              <i class="fa-solid fa-calendar-plus" style="color: #005eb8;"></i> 
+              Add to Your Calendar
+            </h4>
+            <p style="font-size: 14px; color: #666; margin-bottom: 20px;">
+              Don't forget your appointment! Add it to your calendar now to receive reminders.
+            </p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+              <button 
+                id="add-google-calendar" 
+                class="ht-btn" 
+                style="padding: 12px 24px; display: flex; align-items: center; gap: 8px;"
+              >
+                <i class="fa-brands fa-google"></i> Google Calendar
+              </button>
+              <button 
+                id="add-apple-calendar" 
+                class="ht-btn" 
+                style="padding: 12px 24px; display: flex; align-items: center; gap: 8px; background-color: #555 !important; border-color: #555 !important;"
+              >
+                <i class="fa-brands fa-apple"></i> Apple Calendar
+              </button>
+            </div>
+          </div>
+
           <div
             style="
               background-color: #f0f7ff;
@@ -303,8 +353,7 @@
               ></i>
               <strong>What happens next?</strong><br />
               We'll send you an email within the next few minutes with your
-              booking reference and instructions on how to schedule your
-              session.
+              booking reference and meeting link for your consultation.
             </p>
           </div>
 
@@ -415,5 +464,7 @@
     <script src="assets/js/wow.min.js"></script>
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
+    <!--<< Booking Confirmation Js >>-->
+    <script src="assets/js/booking-confirmation.js"></script>
   </body>
 </html>

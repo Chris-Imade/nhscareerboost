@@ -77,6 +77,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const detailsFormSection = document.getElementById('details-form-section');
     const stripePayBtn = document.getElementById('stripe-pay-btn');
     const detailsForm = document.getElementById('details-form');
+    const appointmentDateInput = document.getElementById('appointment-date');
+    const appointmentTimeInput = document.getElementById('appointment-time');
+    
+    // Set minimum date to today
+    if (appointmentDateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        appointmentDateInput.setAttribute('min', today);
+    }
 
     // Set preselected service
     const preselectedRadio = document.getElementById(preselectedService);
@@ -137,6 +145,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const paymentModal = document.getElementById('payment-modal');
             if (paymentModal) {
                 paymentModal.classList.add('active');
+                
+                // Re-mount card element if needed (ensures it's visible and interactive)
+                if (stripe && cardElement) {
+                    // Unmount and remount to ensure proper rendering
+                    cardElement.unmount();
+                    setTimeout(() => {
+                        cardElement.mount('#card-element');
+                    }, 100);
+                }
             }
         });
     }
@@ -188,7 +205,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 email: data.email,
                 phone: data.phone,
                 service: serviceName,
+                appointmentDate: data.appointment_date,
+                appointmentTime: data.appointment_time,
                 message: `Payment ID: ${data.transaction_ref || 'N/A'}\n` +
+                        `Appointment Date: ${data.appointment_date || 'N/A'}\n` +
+                        `Appointment Time: ${data.appointment_time || 'N/A'}\n` +
                         `NHS Band: ${data.nhs_band || 'N/A'}\n` +
                         `Role Applying For: ${data.role || 'N/A'}\n` +
                         `Additional Notes: ${data.notes || 'N/A'}`
@@ -212,8 +233,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 const result = await response.json();
 
                 if (result.success) {
-                    // Success - redirect to confirmation page
-                    window.location.href = 'booking-confirmation.html';
+                    // Success - redirect to confirmation page with appointment details
+                    const params = new URLSearchParams({
+                        service: serviceName,
+                        date: data.appointment_date,
+                        time: data.appointment_time,
+                        name: data.fullname,
+                        email: data.email
+                    });
+                    
+                    window.location.href = `booking-confirmation.html?${params.toString()}`;
                 } else {
                     // Error from server
                     const errors = result.errors?.map(e => e.message).join('\n') || result.message;
@@ -238,9 +267,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeStripe() {
     try {
         if (typeof Stripe === 'undefined') {
-            console.error('Stripe.js not loaded');
+            console.error('Stripe.js not loaded - check if script is blocked or failed to load');
+            alert('Payment system could not load. Please check your internet connection and disable any ad blockers.');
             return;
         }
+        
+        console.log('Initializing Stripe with key:', STRIPE_PUBLISHABLE_KEY.substring(0, 20) + '...');
         
         stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
         const elements = stripe.elements();
@@ -263,6 +295,15 @@ function initializeStripe() {
             },
         });
         
+        console.log('Card element created, attempting to mount...');
+        
+        // Check if container exists
+        const cardContainer = document.getElementById('card-element');
+        if (!cardContainer) {
+            console.error('Card element container #card-element not found in DOM');
+            return;
+        }
+        
         cardElement.mount('#card-element');
         
         // Handle real-time validation errors from card element
@@ -277,9 +318,14 @@ function initializeStripe() {
             }
         });
         
+        cardElement.on('ready', () => {
+            console.log('Stripe card element is ready and interactive');
+        });
+        
         console.log('Stripe initialized successfully');
     } catch (error) {
         console.error('Error initializing Stripe:', error);
+        alert('Failed to initialize payment system: ' + error.message);
     }
 }
 
