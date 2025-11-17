@@ -11,6 +11,14 @@ const STRIPE_PUBLISHABLE_KEY = 'pk_live_51RMAlgD8x0lOeX6HLILfE2zN253AsQrw77myCQ6
 let stripe = null;
 let cardElement = null;
 
+// Discount code variables
+const VALID_DISCOUNT_CODE = 'MCDARKO10';
+const DISCOUNT_PERCENTAGE = 10;
+let isDiscountApplied = false;
+let currentDiscountAmount = 0;
+let originalPrice = 0;
+let finalPrice = 0;
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Consultation page loaded');
     
@@ -135,11 +143,25 @@ document.addEventListener('DOMContentLoaded', function() {
             const serviceKey = selectedService ? selectedService.value : 'cv-review';
             const pkg = packages[serviceKey];
             
+            // Reset discount state when opening modal
+            isDiscountApplied = false;
+            currentDiscountAmount = 0;
+            originalPrice = pkg.price;
+            finalPrice = pkg.price;
+            
             // Update modal amount
             const modalAmount = document.getElementById('modal-payment-amount');
             if (modalAmount) {
                 modalAmount.textContent = pkg.price.toFixed(2);
             }
+            
+            // Reset discount UI
+            const discountInfo = document.getElementById('discount-info');
+            const discountCodeInput = document.getElementById('discount-code');
+            const discountMessage = document.getElementById('discount-message');
+            if (discountInfo) discountInfo.style.display = 'none';
+            if (discountCodeInput) discountCodeInput.value = '';
+            if (discountMessage) discountMessage.innerHTML = '';
             
             // Show payment modal
             const paymentModal = document.getElementById('payment-modal');
@@ -154,6 +176,24 @@ document.addEventListener('DOMContentLoaded', function() {
                         cardElement.mount('#card-element');
                     }, 100);
                 }
+            }
+        });
+    }
+    
+    // Discount code application
+    const applyDiscountBtn = document.getElementById('apply-discount-btn');
+    const discountCodeInput = document.getElementById('discount-code');
+    
+    if (applyDiscountBtn && discountCodeInput) {
+        applyDiscountBtn.addEventListener('click', function() {
+            applyDiscountCode();
+        });
+        
+        // Allow Enter key to apply discount
+        discountCodeInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                applyDiscountCode();
             }
         });
     }
@@ -262,6 +302,80 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ============================================
+// DISCOUNT CODE FUNCTION
+// ============================================
+function applyDiscountCode() {
+    const discountCodeInput = document.getElementById('discount-code');
+    const discountMessage = document.getElementById('discount-message');
+    const discountInfo = document.getElementById('discount-info');
+    const discountAmountSpan = document.getElementById('discount-amount');
+    const finalAmountSpan = document.getElementById('final-amount');
+    const applyBtn = document.getElementById('apply-discount-btn');
+    
+    if (!discountCodeInput || !discountMessage) return;
+    
+    const enteredCode = discountCodeInput.value.trim().toUpperCase();
+    
+    // Clear previous messages
+    discountMessage.innerHTML = '';
+    
+    // Validate code
+    if (!enteredCode) {
+        discountMessage.innerHTML = '<span style="color: #dc3545;"><i class="fa-solid fa-exclamation-circle"></i> Please enter a discount code</span>';
+        return;
+    }
+    
+    if (enteredCode === VALID_DISCOUNT_CODE) {
+        // Valid code - apply discount
+        isDiscountApplied = true;
+        currentDiscountAmount = (originalPrice * DISCOUNT_PERCENTAGE) / 100;
+        finalPrice = originalPrice - currentDiscountAmount;
+        
+        // Update UI
+        discountMessage.innerHTML = '<span style="color: #28a745; font-weight: 600;"><i class="fa-solid fa-check-circle"></i> Discount code applied successfully!</span>';
+        
+        if (discountInfo) {
+            discountInfo.style.display = 'block';
+        }
+        
+        if (discountAmountSpan) {
+            discountAmountSpan.textContent = currentDiscountAmount.toFixed(2);
+        }
+        
+        if (finalAmountSpan) {
+            finalAmountSpan.textContent = finalPrice.toFixed(2);
+        }
+        
+        // Disable input and button after successful application
+        discountCodeInput.disabled = true;
+        if (applyBtn) {
+            applyBtn.disabled = true;
+            applyBtn.style.opacity = '0.6';
+            applyBtn.style.cursor = 'not-allowed';
+        }
+        
+        console.log('Discount applied:', {
+            original: originalPrice,
+            discount: currentDiscountAmount,
+            final: finalPrice
+        });
+    } else {
+        // Invalid code
+        isDiscountApplied = false;
+        currentDiscountAmount = 0;
+        finalPrice = originalPrice;
+        
+        discountMessage.innerHTML = '<span style="color: #dc3545; font-weight: 600;"><i class="fa-solid fa-times-circle"></i> Invalid discount code. Please try again.</span>';
+        
+        if (discountInfo) {
+            discountInfo.style.display = 'none';
+        }
+        
+        console.log('Invalid discount code entered:', enteredCode);
+    }
+}
+
+// ============================================
 // STRIPE INITIALIZATION
 // ============================================
 function initializeStripe() {
@@ -359,7 +473,10 @@ async function handleStripePayment(event) {
         'complete-package': { name: 'Complete Career Boost Package', price: 295 }
     };
     const pkg = packages[serviceKey];
-    const amountInPence = pkg.price * 100; // Convert to pence
+    
+    // Use discounted price if discount is applied, otherwise use original price
+    const priceToCharge = isDiscountApplied ? finalPrice : pkg.price;
+    const amountInPence = Math.round(priceToCharge * 100); // Convert to pence and round to avoid decimal issues
     
     // Show loading state
     setPaymentLoading(true, submitButton, buttonText, spinner);
@@ -381,6 +498,11 @@ async function handleStripePayment(event) {
                     service: pkg.name,
                     serviceKey: serviceKey,
                     timestamp: new Date().toISOString(),
+                    discountApplied: isDiscountApplied,
+                    discountCode: isDiscountApplied ? VALID_DISCOUNT_CODE : 'none',
+                    originalPrice: originalPrice,
+                    discountAmount: currentDiscountAmount,
+                    finalPrice: priceToCharge,
                 },
             }),
         });
