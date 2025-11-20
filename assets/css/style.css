@@ -11944,3 +11944,11 @@ span {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+.ht-top-header {
+  background-color: black;
+}
+.blog-article > .cotainer {
+  padding-top: 30px;
+}
