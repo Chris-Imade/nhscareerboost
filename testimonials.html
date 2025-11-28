@@ -29,6 +29,245 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <!--<< Main.css >>-->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Custom Styles for Modern Testimonials Page -->
+    <style>
+        /* NHS Blue Theme */
+        :root {
+            --nhs-blue: #005EB8;
+            --nhs-dark-blue: #003087;
+            --nhs-light-blue: #E8F4FF;
+            --gold: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-gray: #666;
+            --card-shadow: 0 5px 20px rgba(0, 94, 184, 0.08);
+            --card-shadow-hover: 0 15px 40px rgba(0, 94, 184, 0.15);
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced Button Styles */
+        .ht-btn {
+            background-color: var(--nhs-blue) !important;
+            border-color: var(--nhs-blue) !important;
+            color: white !important;
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 94, 184, 0.3);
+        }
+
+        .ht-btn:hover {
+            background-color: var(--nhs-dark-blue) !important;
+            border-color: var(--nhs-dark-blue) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 94, 184, 0.4) !important;
+        }
+
+        /* Modern Testimonial Cards */
+        .testimonial-card {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 30px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #f0f0f0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: var(--nhs-light-blue);
+        }
+
+        /* Profile Header */
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--nhs-blue), var(--nhs-dark-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 24px;
+            margin-right: 16px;
+            box-shadow: 0 4px 12px rgba(0, 94, 184, 0.2);
+            flex-shrink: 0;
+        }
+
+        .testimonial-info h4 {
+            margin: 0 0 4px 0;
+            color: var(--nhs-blue);
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .testimonial-info p {
+            margin: 0;
+            color: var(--text-gray);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Star Rating */
+        .stars {
+            color: var(--gold);
+            font-size: 20px;
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+            display: flex;
+            gap: 2px;
+        }
+
+        .star-icon {
+            display: inline-block;
+            animation: starPulse 2s ease-in-out infinite;
+        }
+
+        .star-icon:nth-child(1) { animation-delay: 0s; }
+        .star-icon:nth-child(2) { animation-delay: 0.1s; }
+        .star-icon:nth-child(3) { animation-delay: 0.2s; }
+        .star-icon:nth-child(4) { animation-delay: 0.3s; }
+        .star-icon:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes starPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Testimonial Quote */
+        .testimonial-quote {
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 16px;
+            flex-grow: 1;
+            position: relative;
+            padding-left: 20px;
+            border-left: 3px solid var(--nhs-light-blue);
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            font-size: 48px;
+            color: var(--nhs-light-blue);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        /* Section Styling */
+        .testimonials-section {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+        }
+
+        /* Stats Badge */
+        .stats-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--nhs-light-blue);
+            color: var(--nhs-blue);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .stats-badge i {
+            font-size: 18px;
+        }
+
+        /* CTA Section Enhancement */
+        .cta-section {
+            background: linear-gradient(135deg, var(--nhs-blue), var(--nhs-dark-blue));
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.03)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .cta-section .section-title .subtitle,
+        .cta-section .section-title .title,
+        .cta-section .section-title .desc {
+            color: white;
+        }
+
+        .cta-section .ht-btn {
+            background-color: white !important;
+            color: var(--nhs-blue) !important;
+            border-color: white !important;
+        }
+
+        .cta-section .ht-btn:hover {
+            background-color: var(--nhs-light-blue) !important;
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .testimonial-card {
+                padding: 25px;
+            }
+
+            .testimonial-avatar {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .testimonial-info h4 {
+                font-size: 17px;
+            }
+
+            .testimonial-quote {
+                font-size: 15px;
+            }
+
+            .stars {
+                font-size: 18px;
+            }
+        }
+
+        /* Loading Animation */
+        .wow {
+            visibility: hidden;
+        }
+
+        .wow.animated {
+            visibility: visible;
+        }
+    </style>
 </head>
 
 <body class="body-color">
@@ -162,90 +401,167 @@
 
 
     <!-- testimonials grid -->
-    <section class="ht-services-area pt-0 pb-130 fix">
+    <section class="testimonials-section">
         <div class="container">
-            <div class="ht-services-wrapper">
-                <div class="row">
+            <!-- Stats Badge -->
+            <div class="text-center wow fadeInUp" data-wow-delay=".2s">
+                <div class="stats-badge">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>95% Interview Success Rate | 100+ Happy Clients</span>
+                </div>
+            </div>
+
+            <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".2s">
-                        <div class="testimonial-card"
-                            style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 30px; transition: all 0.3s ease;">
-                            <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                                <div
-                                    style="width: 50px; height: 50px; background-color: #005EB8; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 20px; margin-right: 15px;">
-                                    A</div>
-                                <div>
-                                    <h4 style="margin: 0; color: #005EB8; font-size: 18px;">Aisha</h4>
-                                    <p style="margin: 0; color: #666; font-size: 14px;">Project Officer</p>
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">A</div>
+                                <div class="testimonial-info">
+                                    <h4>Aisha</h4>
+                                    <p>Project Officer</p>
                                 </div>
                             </div>
-                            <div class="stars" style="color: #FFD700; font-size: 16px; margin-bottom: 15px;">⭐️⭐️⭐️⭐️⭐️
+                            <div class="stars">
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
                             </div>
-                            <p class="desc" style="font-style: italic; color: #333; line-height: 1.7;">"Daniel helped me
-                                refine my supporting statement — I got shortlisted the same week and later secured my
-                                Band 6 promotion."</p>
+                            <p class="testimonial-quote">Daniel helped me refine my supporting statement — I got shortlisted the same week and later secured my Band 6 promotion.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="ht-services-items mt-30">
-                            <div class="stars" style="color: #FFD700; font-size: 18px; margin-bottom: 15px;">⭐️⭐️⭐️⭐️⭐️
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">L</div>
+                                <div class="testimonial-info">
+                                    <h4>Leanne</h4>
+                                    <p>Business Support Officer</p>
+                                </div>
                             </div>
-                            <p class="desc">"Clear, patient, and genuinely insightful. He knows the NHS process inside
-                                out."</p>
-                            <h4 class="mt-3"><strong>— Leanne</strong>, Business Support Officer</h4>
+                            <div class="stars">
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                            </div>
+                            <p class="testimonial-quote">Clear, patient, and genuinely insightful. He knows the NHS process inside out.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".6s">
-                        <div class="ht-services-items mt-30">
-                            <div class="stars" style="color: #FFD700; font-size: 18px; margin-bottom: 15px;">⭐️⭐️⭐️⭐️⭐️
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">T</div>
+                                <div class="testimonial-info">
+                                    <h4>Tom</h4>
+                                    <p>Digital Analyst</p>
+                                </div>
                             </div>
-                            <p class="desc">"The mock interview was a game changer — realistic, structured, and
-                                confidence-boosting."</p>
-                            <h4 class="mt-3"><strong>— Tom</strong>, Digital Analyst</h4>
+                            <div class="stars">
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                            </div>
+                            <p class="testimonial-quote">The mock interview was a game changer — realistic, structured, and confidence-boosting.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".8s">
-                        <div class="ht-services-items mt-30">
-                            <div class="stars" style="color: #FFD700; font-size: 18px; margin-bottom: 15px;">⭐️⭐️⭐️⭐️⭐️
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">S</div>
+                                <div class="testimonial-info">
+                                    <h4>Sarah</h4>
+                                    <p>Senior Nurse Manager</p>
+                                </div>
                             </div>
-                            <p class="desc">"After two unsuccessful attempts at a Band 7 post, Daniel's coaching helped
-                                me finally get shortlisted and perform confidently at interview."</p>
-                            <h4 class="mt-3"><strong>— Sarah</strong>, Senior Nurse Manager</h4>
+                            <div class="stars">
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                            </div>
+                            <p class="testimonial-quote">After two unsuccessful attempts at a Band 7 post, Daniel's coaching helped me finally get shortlisted and perform confidently at interview.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="1s">
-                        <div class="ht-services-items mt-30">
-                            <div class="stars" style="color: #FFD700; font-size: 18px; margin-bottom: 15px;">⭐️⭐️⭐️⭐️⭐️
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">M</div>
+                                <div class="testimonial-info">
+                                    <h4>Michael</h4>
+                                    <p>Clinical Support Worker</p>
+                                </div>
                             </div>
-                            <p class="desc">"I'd applied to over 20 NHS jobs without success. Daniel's CV and statement
-                                rewrite changed everything — I got three interview invites in a week."</p>
-                            <h4 class="mt-3"><strong>— Michael</strong>, Clinical Support Worker</h4>
+                            <div class="stars">
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                            </div>
+                            <p class="testimonial-quote">I'd applied to over 20 NHS jobs without success. Daniel's CV and statement rewrite changed everything — I got three interview invites in a week.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="1.2s">
-                        <div class="ht-services-items mt-30">
-                            <div class="stars" style="color: #FFD700; font-size: 18px; margin-bottom: 15px;">⭐️⭐️⭐️⭐️⭐️
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">B</div>
+                                <div class="testimonial-info">
+                                    <h4>Beatrice</h4>
+                                    <p>Communications Officer</p>
+                                </div>
                             </div>
-                            <p class="desc">"I was anxious about my interview, but Daniel's mock session gave me clear
-                                structure and calm confidence. I got the job on my first try."</p>
-                            <h4 class="mt-3"><strong>— Beatrice</strong>, Communications Officer</h4>
+                            <div class="stars">
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                            </div>
+                            <p class="testimonial-quote">I was anxious about my interview, but Daniel's mock session gave me clear structure and calm confidence. I got the job on my first try.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="1.4s">
-                        <div class="ht-services-items mt-30">
-                            <div class="stars" style="color: #FFD700; font-size: 18px; margin-bottom: 15px;">⭐️⭐️⭐️⭐️⭐️
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">J</div>
+                                <div class="testimonial-info">
+                                    <h4>James</h4>
+                                    <p>Data & Informatics Specialist</p>
+                                </div>
                             </div>
-                            <p class="desc">"Daniel helped me translate my overseas healthcare experience into the NHS
-                                context, which led to my first UK role."</p>
-                            <h4 class="mt-3"><strong>— James</strong>, Data & Informatics Specialist</h4>
+                            <div class="stars">
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                            </div>
+                            <p class="testimonial-quote">Daniel helped me translate my overseas healthcare experience into the NHS context, which led to my first UK role.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="1.6s">
-                        <div class="ht-services-items mt-30">
-                            <div class="stars" style="color: #FFD700; font-size: 18px; margin-bottom: 15px;">⭐️⭐️⭐️⭐️⭐️
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">C</div>
+                                <div class="testimonial-info">
+                                    <h4>Chris</h4>
+                                    <p>Senior Physiotherapist</p>
+                                </div>
                             </div>
-                            <p class="desc">"Daniel's STAR-focused interview prep gave me the confidence I never had
-                                before. I secured my Band 7 promotion the next week."</p>
-                            <h4 class="mt-3"><strong>— Chris</strong>, Senior Physiotherapist</h4>
+                            <div class="stars">
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                                <span class="star-icon">⭐</span>
+                            </div>
+                            <p class="testimonial-quote">Daniel's STAR-focused interview prep gave me the confidence I never had before. I secured my Band 7 promotion the next week.</p>
                         </div>
                     </div>
                 </div>
@@ -255,7 +571,7 @@
     <!-- testimonials grid end -->
 
     <!-- ht cta area start -->
-    <section class="ht-blog-area section-padding fix">
+    <section class="cta-section">
         <div class="container">
             <div class="section-title text-center">
                 <span class="subtitle wow fadeInUp" data-wow-delay=".2s">Ready to Join Them?</span>
@@ -263,7 +579,7 @@
                 <p class="desc wow fadeInUp" data-wow-delay=".6s">Book your free consultation and discover how I can
                     help you secure your next NHS role.</p>
                 <div class="mt-40 wow fadeInUp" data-wow-delay=".8s">
-                    <a href="contact.html" class="ht-btn style-2">Book Free Consultation</a>
+                    <a href="consultation.html" class="ht-btn style-2">Book Free 15-Minute CV Audit</a>
                 </div>
             </div>
         </div>
