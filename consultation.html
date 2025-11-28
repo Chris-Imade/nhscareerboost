@@ -913,48 +913,9 @@
 
                     <!-- Details Form (Hidden Initially) -->
                     <div id="details-form-section" style="display: none;">
-                        <div class="card shadow p-4">
-                            <h4 class="mb-4">Complete Your Details</h4>
-                            <form id="details-form">
-                                <input type="hidden" id="transaction-ref" name="transaction_ref">
-                                <div class="mb-3">
-                                    <label class="form-label">Full Name *</label>
-                                    <input type="text" name="fullname" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Email Address *</label>
-                                    <input type="email" name="email" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Phone Number *</label>
-                                    <input type="tel" name="phone" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Preferred Appointment Date *</label>
-                                    <input type="date" id="appointment-date" name="appointment_date" class="form-control" required>
-                                    <small class="form-text text-muted">Select your preferred consultation date</small>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Preferred Appointment Time *</label>
-                                    <input type="time" id="appointment-time" name="appointment_time" class="form-control" required>
-                                    <small class="form-text text-muted">Select your preferred consultation time (UK time)</small>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Current NHS Band (if applicable)</label>
-                                    <input type="text" name="nhs_band" class="form-control" placeholder="e.g., Band 5">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Role/Position Applying For</label>
-                                    <textarea name="role" class="form-control" rows="2"></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Additional Notes</label>
-                                    <textarea name="notes" class="form-control" rows="3"
-                                        placeholder="Any specific requirements or questions?"></textarea>
-                                </div>
-                                <button type="submit" class="ht-btn style-2 w-100">Complete Booking</button>
-                            </form>
-                        </div>
+                        <iframe aria-label='Complete Your Details' frameborder="0"
+                            style="height:500px;width:99%;border:none;"
+                            src='https://forms.zohopublic.com/dxpress1/form/CompleteYourDetails/formperma/0XqHtetqVwdUFVe-QS8Dtqbe-rQL5zdl51zuGdaHfnc'></iframe>
                     </div>
                 </div>
             </div>
@@ -972,14 +933,16 @@
             <div class="payment-amount-display">
                 <div class="payment-amount-label">Total Amount</div>
                 <div class="payment-amount-value">£<span id="modal-payment-amount">75.00</span></div>
-                <div id="discount-info" style="display: none; margin-top: 10px; padding-top: 10px; border-top: 1px solid #0066cc;">
+                <div id="discount-info"
+                    style="display: none; margin-top: 10px; padding-top: 10px; border-top: 1px solid #0066cc;">
                     <div style="display: flex; justify-content: space-between; align-items: center; font-size: 14px;">
                         <span style="color: #28a745; font-weight: 600;">
                             <i class="fa-solid fa-tag"></i> Discount Applied (10%)
                         </span>
                         <span style="color: #28a745; font-weight: 600;">-£<span id="discount-amount">0.00</span></span>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 16px; margin-top: 8px;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; font-size: 16px; margin-top: 8px;">
                         <span style="color: #0066cc; font-weight: 700;">Final Amount:</span>
                         <span style="color: #0066cc; font-weight: 700;">£<span id="final-amount">75.00</span></span>
                     </div>
@@ -1004,7 +967,7 @@
                     <div style="display: flex; gap: 10px;">
                         <input type="text" id="discount-code" name="discount_code" placeholder="Enter promo code"
                             style="flex: 1; padding: 12px 16px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; text-transform: uppercase;">
-                        <button type="button" id="apply-discount-btn" 
+                        <button type="button" id="apply-discount-btn"
                             style="padding: 12px 24px; background: #28a745; color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background-color 0.3s; white-space: nowrap;">
                             Apply
                         </button>
@@ -1072,10 +1035,10 @@
                                     daniel@nhscareerboost.co.uk</a></li>
                             <li><a href="https://www.linkedin.com/in/okojie-daniel-4922b6207" target="_blank"><i
                                         class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
-                            <li><a href="https://www.instagram.com/nhscareerboost?igsh=b3E3bjZoaXQyYThy&utm_source=qr" target="_blank"><i
-                                        class="fa-brands fa-instagram"></i> Instagram</a></li>
-                            <li><a href="https://www.tiktok.com/@nhs.career.boost?_r=1&_t=ZN-91hOm811Kqc" target="_blank"><i
-                                        class="fa-brands fa-tiktok"></i> TikTok</a></li>
+                            <li><a href="https://www.instagram.com/nhscareerboost?igsh=b3E3bjZoaXQyYThy&utm_source=qr"
+                                    target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                            <li><a href="https://www.tiktok.com/@nhs.career.boost?_r=1&_t=ZN-91hOm811Kqc"
+                                    target="_blank"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
                         </ul>
                     </div>
                 </div>
