@@ -1,470 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- ========== Meta Tags ========== -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="hurraytheme" />
-    <meta name="description" content="Booking confirmed - NHS Career Boost" />
-    <!-- ======== Page title ============ -->
-    <title>Booking Confirmed | NHS Career Boost</title>
-    <!--<< Favcion >>-->
-    <link rel="shortcut icon" href="assets/img/favicon.svg" />
-    <!--<< Bootstrap min.css >>-->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <!--<< All Min Css >>-->
-    <link rel="stylesheet" href="assets/css/all.min.css" />
-    <!--<< Animate.css >>-->
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <!--<< Magnific Popup.css >>-->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
-    <!--<< MeanMenu.css >>-->
-    <link rel="stylesheet" href="assets/css/meanmenu.css" />
-    <!--<< Swiper Bundle.css >>-->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
-    <!--<< Nice Select.css >>-->
-    <link rel="stylesheet" href="assets/css/nice-select.css" />
-    <!--<< Main.css >>-->
-    <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- Custom Styles -->
-    <style>
-      /* NHS Blue Button System */
-      .ht-btn {
-        background-color: #005eb8 !important;
-        border-color: #005eb8 !important;
-        color: white !important;
-        font-weight: 600;
-        transition: all 0.3s ease;
+<head>
+  <!-- ========== Meta Tags ========== -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="hurraytheme" />
+  <meta name="description" content="Booking confirmed - Health Career Boost" />
+  <!-- ======== Page title ============ -->
+  <title>Booking Confirmed | Health Career Boost</title>
+  <!--<< Favcion >>-->
+  <link rel="shortcut icon" href="assets/img/favicon.svg" />
+  <!--<< Bootstrap min.css >>-->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <!--<< All Min Css >>-->
+  <link rel="stylesheet" href="assets/css/all.min.css" />
+  <!--<< Animate.css >>-->
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <!--<< Magnific Popup.css >>-->
+  <link rel="stylesheet" href="assets/css/magnific-popup.css" />
+  <!--<< MeanMenu.css >>-->
+  <link rel="stylesheet" href="assets/css/meanmenu.css" />
+  <!--<< Swiper Bundle.css >>-->
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+  <!--<< Nice Select.css >>-->
+  <link rel="stylesheet" href="assets/css/nice-select.css" />
+  <!--<< Main.css >>-->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Custom Styles -->
+  <style>
+    /* NHS Blue Button System */
+    .ht-btn {
+      background-color: #005eb8 !important;
+      border-color: #005eb8 !important;
+      color: white !important;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .ht-btn:hover {
+      background-color: #003087 !important;
+      border-color: #003087 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 94, 184, 0.5) !important;
+    }
+
+    .confirmation-icon {
+      width: 100px;
+      height: 100px;
+      background-color: #28a745;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      animation: scaleIn 0.5s ease-out;
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
       }
 
-      .ht-btn:hover {
-        background-color: #003087 !important;
-        border-color: #003087 !important;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0, 94, 184, 0.5) !important;
+      to {
+        transform: scale(1);
       }
+    }
 
-      .confirmation-icon {
-        width: 100px;
-        height: 100px;
-        background-color: #28a745;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 30px;
-        animation: scaleIn 0.5s ease-out;
-      }
+    .confirmation-box {
+      background: white;
+      padding: 60px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 94, 184, 0.15);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
 
-      @keyframes scaleIn {
-        from {
-          transform: scale(0);
-        }
-        to {
-          transform: scale(1);
-        }
-      }
+    .button-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
 
+    @media (max-width: 768px) {
       .confirmation-box {
-        background: white;
-        padding: 60px 40px;
-        border-radius: 15px;
-        box-shadow: 0 10px 40px rgba(0, 94, 184, 0.15);
-        text-align: center;
-        max-width: 700px;
-        margin: 0 auto;
+        padding: 40px 20px;
       }
 
       .button-group {
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 40px;
+        flex-direction: column;
       }
 
-      @media (max-width: 768px) {
-        .confirmation-box {
-          padding: 40px 20px;
-        }
-
-        .button-group {
-          flex-direction: column;
-        }
-
-        .button-group .ht-btn {
-          width: 100%;
-        }
+      .button-group .ht-btn {
+        width: 100%;
       }
-    </style>
-  </head>
+    }
+  </style>
+</head>
 
-  <body class="body-color">
-    <!-- preloader -->
-    <div id="preloader">
-      <div class="loader"></div>
-    </div>
+<body class="body-color">
+  <!-- preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
 
-    <!-- Back To Top Start -->
-    <button id="back-top" class="back-to-top">
-      <i class="fa-solid fa-arrow-up"></i>
-    </button>
-    <!-- Back To Top End -->
+  <!-- Back To Top Start -->
+  <button id="back-top" class="back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  <!-- Back To Top End -->
 
-    <!-- ht-header-area start -->
-    <header class="ht-header-area header-1">
-      <!-- ht-top-header area start -->
-      <div class="ht-top-header">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="left">
-                <p>
-                  <i class="fa-solid fa-briefcase-medical"></i> Empowering NHS
-                  Professionals
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <ul class="right">
-                <li>
-                  <i class="fa-solid fa-envelope"></i>
-                  <a href="mailto:daniel@nhscareerboost.co.uk">daniel@nhscareerboost.co.uk</a>
-                </li>
-                <li>
-                  <i class="fa-solid fa-phone"></i>
-                  <a href="tel:01604908464">01604 908464</a>
-                </li>
-              </ul>
+  <!-- ht-header-area start -->
+  <header class="ht-header-area header-1">
+    <!-- ht-top-header area start -->
+    <div class="ht-top-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="left">
+              <p>
+                <i class="fa-solid fa-briefcase-medical"></i> Empowering NHS
+                Professionals
+              </p>
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- ht-main-header area start -->
-      <div class="ht-main-header header-1" id="header-sticky">
-        <div class="container">
-          <div class="ht-menu-wrapper">
-            <div class="ht-menu-left">
-              <div class="ht-menu-logo">
-                <a href="index.html"
-                  ><img
-                    src="assets/img/logo/logo.png"
-                    alt="logo"
-                    style="max-height: 50px; width: auto"
-                /></a>
-              </div>
-              <div class="ht-menu-main d-none d-lg-block">
-                <nav class="ht-mobile-menu-active">
-                  <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                    <li><a href="consultation.html">Book Now</a></li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-            <div class="ht-menu-right">
-              <a href="contact.html" class="ht-btn d-none d-lg-block"
-                >Contact Us</a
-              >
-              <button class="ht-menu-btn d-lg-none offcanvas-toggle">
-                <i class="fa-solid fa-bars-staggered"></i>
-              </button>
-            </div>
+          <div class="col-lg-6">
+            <ul class="right">
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:daniel@healthcareerboost.co.uk">daniel@healthcareerboost.co.uk</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:01604908464">01604 908464</a>
+              </li>
+            </ul>
           </div>
-        </div>
-      </div>
-    </header>
-    <!-- ht-header-area end -->
-
-    <!-- offcanvas for navigation -->
-    <div class="ht-offcanvas">
-      <div class="ht-offcanvas-wrapper">
-        <div class="ht-offcanvas-header mb-50">
-          <a href="index.html" class="ht-offcanvas-logo"
-            ><img
-              src="assets/img/logo/logo.png"
-              alt="logo"
-              style="max-height: 45px; width: auto"
-          /></a>
-          <button class="ht-offcanvas-toggle-close">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="ht-offcanvas-menu d-xl-none mb-50">
-          <nav></nav>
-        </div>
-        <div class="ht-offcanvas-content d-none d-xl-block mb-50">
-          <h2 class="ht-offcanvas-content__title">NHS Career Boost</h2>
-          <p>
-            Empowering NHS professionals through clarity, confidence, and
-            results.
-          </p>
-        </div>
-        <div class="ht-offcanvas-info mb-50">
-          <h3 class="ht-offcanvas__title">Get In Touch</h3>
-          <span
-            ><a href="tel:01604908464"
-              ><i class="fa-solid fa-phone"></i> 01604 908464</a
-            ></span
-          >
-          <span
-            ><a href="mailto:daniel@nhscareerboost.co.uk"
-              ><i class="fa-solid fa-envelope"></i>
-              daniel@nhscareerboost.co.uk</a
-            ></span
-          >
-          <span
-            ><a
-              href="https://www.linkedin.com/in/okojie-daniel-4922b6207"
-              target="_blank"
-              ><i class="fa-brands fa-linkedin"></i> LinkedIn</a
-            ></span
-          >
         </div>
       </div>
     </div>
 
-    <!-- offcanvas overlay -->
-    <div class="ht-offcanvas-overlay"></div>
-
-    <!-- ht breadcrumb area start -->
-    <section class="ht-breadcrumb-area">
+    <!-- ht-main-header area start -->
+    <div class="ht-main-header header-1" id="header-sticky">
       <div class="container">
-        <div class="ht-breadcrumb-heading">
-          <h2 class="ht-breadcrumb-title">Booking Confirmed</h2>
-          <ul class="ht-breadcrumb-list">
-            <li><a href="index.html">Home</a></li>
-            <li><i class="fa-solid fa-chevron-right"></i></li>
-            <li><a href="consultation.html">Book Now</a></li>
-            <li><i class="fa-solid fa-chevron-right"></i></li>
-            <li class="active">Confirmation</li>
-          </ul>
+        <div class="ht-menu-wrapper">
+          <div class="ht-menu-left">
+            <div class="ht-menu-logo">
+              <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo"
+                  style="max-height: 50px; width: auto" /></a>
+            </div>
+            <div class="ht-menu-main d-none d-lg-block">
+              <nav class="ht-mobile-menu-active">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="testimonials.html">Testimonials</a></li>
+                  <li><a href="consultation.html">Book Now</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="ht-menu-right">
+            <a href="contact.html" class="ht-btn d-none d-lg-block">Contact Us</a>
+            <button class="ht-menu-btn d-lg-none offcanvas-toggle">
+              <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+          </div>
         </div>
       </div>
-    </section>
-    <!-- ht breadcrumb area end -->
+    </div>
+  </header>
+  <!-- ht-header-area end -->
 
-    <!-- Confirmation Section -->
-    <section class="section-padding" style="padding: 100px 0">
-      <div class="container">
-        <div class="confirmation-box">
-          <div class="confirmation-icon">
-            <i
-              class="fa-solid fa-check"
-              style="color: white; font-size: 50px"
-            ></i>
-          </div>
+  <!-- offcanvas for navigation -->
+  <div class="ht-offcanvas">
+    <div class="ht-offcanvas-wrapper">
+      <div class="ht-offcanvas-header mb-50">
+        <a href="index.html" class="ht-offcanvas-logo"><img src="assets/img/logo/logo.png" alt="logo"
+            style="max-height: 45px; width: auto" /></a>
+        <button class="ht-offcanvas-toggle-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="ht-offcanvas-menu d-xl-none mb-50">
+        <nav></nav>
+      </div>
+      <div class="ht-offcanvas-content d-none d-xl-block mb-50">
+        <h2 class="ht-offcanvas-content__title">Health Career Boost</h2>
+        <p>
+          Empowering NHS professionals through clarity, confidence, and
+          results.
+        </p>
+      </div>
+      <div class="ht-offcanvas-info mb-50">
+        <h3 class="ht-offcanvas__title">Get In Touch</h3>
+        <span><a href="tel:01604908464"><i class="fa-solid fa-phone"></i> 01604 908464</a></span>
+        <span><a href="mailto:daniel@healthcareerboost.co.uk"><i class="fa-solid fa-envelope"></i>
+            daniel@healthcareerboost.co.uk</a></span>
+        <span><a href="https://www.linkedin.com/in/okojie-daniel-4922b6207" target="_blank"><i
+              class="fa-brands fa-linkedin"></i> LinkedIn</a></span>
+      </div>
+    </div>
+  </div>
 
-          <h1
-            style="
+  <!-- offcanvas overlay -->
+  <div class="ht-offcanvas-overlay"></div>
+
+  <!-- ht breadcrumb area start -->
+  <section class="ht-breadcrumb-area">
+    <div class="container">
+      <div class="ht-breadcrumb-heading">
+        <h2 class="ht-breadcrumb-title">Booking Confirmed</h2>
+        <ul class="ht-breadcrumb-list">
+          <li><a href="index.html">Home</a></li>
+          <li><i class="fa-solid fa-chevron-right"></i></li>
+          <li><a href="consultation.html">Book Now</a></li>
+          <li><i class="fa-solid fa-chevron-right"></i></li>
+          <li class="active">Confirmation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- ht breadcrumb area end -->
+
+  <!-- Confirmation Section -->
+  <section class="section-padding" style="padding: 100px 0">
+    <div class="container">
+      <div class="confirmation-box">
+        <div class="confirmation-icon">
+          <i class="fa-solid fa-check" style="color: white; font-size: 50px"></i>
+        </div>
+
+        <h1 style="
               color: #005eb8;
               font-size: 36px;
               font-weight: 700;
               margin-bottom: 20px;
-            "
-          >
-            Thank You for Your Booking!
-          </h1>
+            ">
+          Thank You for Your Booking!
+        </h1>
 
-          <p
-            style="
+        <p style="
               font-size: 18px;
               color: #333;
               line-height: 1.8;
               margin-bottom: 30px;
-            "
-          >
-            Your payment has been successfully processed. You'll receive a
-            confirmation email shortly with next steps and details about your
-            consultation.
-          </p>
+            ">
+          Your payment has been successfully processed. You'll receive a
+          confirmation email shortly with next steps and details about your
+          consultation.
+        </p>
 
-          <!-- Appointment Details -->
-          <div id="appointment-details" style="display: none; margin-bottom: 30px;">
-            <div
-              style="
+        <!-- Appointment Details -->
+        <div id="appointment-details" style="display: none; margin-bottom: 30px;">
+          <div style="
                 background-color: #f0f7ff;
                 padding: 25px;
                 border-radius: 10px;
                 border-left: 4px solid #005eb8;
                 text-align: left;
-              "
-            >
-              <h4 style="color: #005eb8; margin-bottom: 15px; font-weight: 600;">
-                <i class="fa-solid fa-calendar-check"></i> Your Appointment Details
-              </h4>
-              <div style="font-size: 16px; color: #333; line-height: 2;">
-                <p style="margin: 5px 0;"><strong>Service:</strong> <span id="detail-service"></span></p>
-                <p style="margin: 5px 0;"><strong>Date:</strong> <span id="detail-date"></span></p>
-                <p style="margin: 5px 0;"><strong>Time:</strong> <span id="detail-time"></span> (UK Time)</p>
-                <p style="margin: 5px 0;"><strong>Name:</strong> <span id="detail-name"></span></p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Add to Calendar Section -->
-          <div id="calendar-section" style="display: none; margin-bottom: 30px;">
-            <h4 style="color: #333; margin-bottom: 20px; font-weight: 600;">
-              <i class="fa-solid fa-calendar-plus" style="color: #005eb8;"></i> 
-              Add to Your Calendar
+              ">
+            <h4 style="color: #005eb8; margin-bottom: 15px; font-weight: 600;">
+              <i class="fa-solid fa-calendar-check"></i> Your Appointment Details
             </h4>
-            <p style="font-size: 14px; color: #666; margin-bottom: 20px;">
-              Don't forget your appointment! Add it to your calendar now to receive reminders.
-            </p>
-            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-              <button 
-                id="add-google-calendar" 
-                class="ht-btn" 
-                style="padding: 12px 24px; display: flex; align-items: center; gap: 8px;"
-              >
-                <i class="fa-brands fa-google"></i> Google Calendar
-              </button>
-              <button 
-                id="add-apple-calendar" 
-                class="ht-btn" 
-                style="padding: 12px 24px; display: flex; align-items: center; gap: 8px; background-color: #555 !important; border-color: #555 !important;"
-              >
-                <i class="fa-brands fa-apple"></i> Apple Calendar
-              </button>
+            <div style="font-size: 16px; color: #333; line-height: 2;">
+              <p style="margin: 5px 0;"><strong>Service:</strong> <span id="detail-service"></span></p>
+              <p style="margin: 5px 0;"><strong>Date:</strong> <span id="detail-date"></span></p>
+              <p style="margin: 5px 0;"><strong>Time:</strong> <span id="detail-time"></span> (UK Time)</p>
+              <p style="margin: 5px 0;"><strong>Name:</strong> <span id="detail-name"></span></p>
             </div>
           </div>
+        </div>
 
-          <div
-            style="
+        <!-- Add to Calendar Section -->
+        <div id="calendar-section" style="display: none; margin-bottom: 30px;">
+          <h4 style="color: #333; margin-bottom: 20px; font-weight: 600;">
+            <i class="fa-solid fa-calendar-plus" style="color: #005eb8;"></i>
+            Add to Your Calendar
+          </h4>
+          <p style="font-size: 14px; color: #666; margin-bottom: 20px;">
+            Don't forget your appointment! Add it to your calendar now to receive reminders.
+          </p>
+          <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <button id="add-google-calendar" class="ht-btn"
+              style="padding: 12px 24px; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-brands fa-google"></i> Google Calendar
+            </button>
+            <button id="add-apple-calendar" class="ht-btn"
+              style="padding: 12px 24px; display: flex; align-items: center; gap: 8px; background-color: #555 !important; border-color: #555 !important;">
+              <i class="fa-brands fa-apple"></i> Apple Calendar
+            </button>
+          </div>
+        </div>
+
+        <div style="
               background-color: #f0f7ff;
               padding: 20px;
               border-radius: 10px;
               border-left: 4px solid #005eb8;
               margin-bottom: 30px;
-            "
-          >
-            <p
-              style="margin: 0; font-size: 16px; color: #333; line-height: 1.6"
-            >
-              <i
-                class="fa-solid fa-info-circle"
-                style="color: #005eb8; margin-right: 8px"
-              ></i>
-              <strong>What happens next?</strong><br />
-              We'll send you an email within the next few minutes with your
-              booking reference and meeting link for your consultation.
-            </p>
-          </div>
+            ">
+          <p style="margin: 0; font-size: 16px; color: #333; line-height: 1.6">
+            <i class="fa-solid fa-info-circle" style="color: #005eb8; margin-right: 8px"></i>
+            <strong>What happens next?</strong><br />
+            We'll send you an email within the next few minutes with your
+            booking reference and meeting link for your consultation.
+          </p>
+        </div>
 
-          <div class="button-group">
-            <a href="index.html" class="ht-btn" style="padding: 15px 30px">
-              <i class="fa-solid fa-home"></i> Return to Home
-            </a>
-            <a href="contact.html" class="ht-btn" style="padding: 15px 30px">
-              <i class="fa-solid fa-envelope"></i> Contact Us
-            </a>
+        <div class="button-group">
+          <a href="index.html" class="ht-btn" style="padding: 15px 30px">
+            <i class="fa-solid fa-home"></i> Return to Home
+          </a>
+          <a href="contact.html" class="ht-btn" style="padding: 15px 30px">
+            <i class="fa-solid fa-envelope"></i> Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Confirmation Section End -->
+
+  <!-- ht-footer-area-start -->
+  <footer class="ht-footer-area fix">
+    <div class="container">
+      <div class="ht-footer-top-wrapper">
+        <div class="ht-footer-top-left">
+          <a href="index.html"><img src="assets/img/logo/logo.png" alt="logo"
+              style="max-height: 60px; width: auto" /></a>
+          <p class="desc">
+            Empowering NHS professionals through clarity, <br />
+            confidence, and results.
+          </p>
+        </div>
+        <div class="ht-footer-top-right">
+          <!-- Social media icons removed as per client request -->
+        </div>
+      </div>
+      <div class="ht-footer-widget-wrapper">
+        <div class="ht-footer-widget">
+          <div class="ht-footer-widget-items">
+            <h5 class="head">Quick Links</h5>
+            <ul class="link-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+            </ul>
+          </div>
+          <div class="ht-footer-widget-items">
+            <h5 class="head">Services</h5>
+            <ul class="link-list">
+              <li><a href="services.html">CV Review & Optimisation</a></li>
+              <li><a href="services.html">Supporting Statement</a></li>
+              <li><a href="services.html">Mock Interview Coaching</a></li>
+              <li><a href="services.html">Career Boost Package</a></li>
+            </ul>
+          </div>
+          <div class="ht-footer-widget-items">
+            <h5 class="head">Get In Touch</h5>
+            <ul class="link-list">
+              <li>
+                <a href="https://wa.me/447506323070" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+              </li>
+              <li>
+                <a href="mailto:daniel@healthcareerboost.co.uk"><i class="fa-solid fa-envelope"></i>
+                  daniel@healthcareerboost.co.uk</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/okojie-daniel-4922b6207" target="_blank"><i
+                    class="fa-brands fa-linkedin"></i> LinkedIn</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Confirmation Section End -->
-
-    <!-- ht-footer-area-start -->
-    <footer class="ht-footer-area fix">
-      <div class="container">
-        <div class="ht-footer-top-wrapper">
-          <div class="ht-footer-top-left">
-            <a href="index.html"
-              ><img
-                src="assets/img/logo/logo.png"
-                alt="logo"
-                style="max-height: 60px; width: auto"
-            /></a>
-            <p class="desc">
-              Empowering NHS professionals through clarity, <br />
-              confidence, and results.
-            </p>
-          </div>
-          <div class="ht-footer-top-right">
-            <!-- Social media icons removed as per client request -->
-          </div>
-        </div>
-        <div class="ht-footer-widget-wrapper">
-          <div class="ht-footer-widget">
-            <div class="ht-footer-widget-items">
-              <h5 class="head">Quick Links</h5>
-              <ul class="link-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-              </ul>
-            </div>
-            <div class="ht-footer-widget-items">
-              <h5 class="head">Services</h5>
-              <ul class="link-list">
-                <li><a href="services.html">CV Review & Optimisation</a></li>
-                <li><a href="services.html">Supporting Statement</a></li>
-                <li><a href="services.html">Mock Interview Coaching</a></li>
-                <li><a href="services.html">Career Boost Package</a></li>
-              </ul>
-            </div>
-            <div class="ht-footer-widget-items">
-              <h5 class="head">Get In Touch</h5>
-              <ul class="link-list">
-                <li>
-                  <a href="https://wa.me/447506323070" target="_blank"
-                    ><i class="fa-brands fa-whatsapp"></i> WhatsApp</a
-                  >
-                </li>
-                <li>
-                  <a href="mailto:daniel@nhscareerboost.co.uk"
-                    ><i class="fa-solid fa-envelope"></i>
-                    daniel@nhscareerboost.co.uk</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/okojie-daniel-4922b6207"
-                    target="_blank"
-                    ><i class="fa-brands fa-linkedin"></i> LinkedIn</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="ht-footer-copyright">
-          <p>© 2025 <span>NHS Career Boost</span> | All rights reserved</p>
-        </div>
+      <div class="ht-footer-copyright">
+        <p>© 2025 <span>Health Career Boost</span> | All rights reserved</p>
       </div>
-    </footer>
-    <!-- ht-footer-area-end -->
+    </div>
+  </footer>
+  <!-- ht-footer-area-end -->
 
-    <!--<< All JS Plugins >>-->
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <!--<< Viewport Js >>-->
-    <script src="assets/js/viewport.jquery.js"></script>
-    <!--<< Bootstrap Js >>-->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <!--<< Nice Select Js >>-->
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <!--<< Waypoints Js >>-->
-    <script src="assets/js/jquery.waypoints.js"></script>
-    <!--<< Counterup Js >>-->
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <!--<< Swiper Slider Js >>-->
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <!--<< MeanMenu Js >>-->
-    <script src="assets/js/jquery.meanmenu.min.js"></script>
-    <!--<< Magnific Popup Js >>-->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <!--<< Wow Animation Js >>-->
-    <script src="assets/js/wow.min.js"></script>
-    <!--<< Main.js >>-->
-    <script src="assets/js/main.js"></script>
-    <!--<< Booking Confirmation Js >>-->
-    <script src="assets/js/booking-confirmation.js"></script>
-  </body>
+  <!--<< All JS Plugins >>-->
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <!--<< Viewport Js >>-->
+  <script src="assets/js/viewport.jquery.js"></script>
+  <!--<< Bootstrap Js >>-->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <!--<< Nice Select Js >>-->
+  <script src="assets/js/jquery.nice-select.min.js"></script>
+  <!--<< Waypoints Js >>-->
+  <script src="assets/js/jquery.waypoints.js"></script>
+  <!--<< Counterup Js >>-->
+  <script src="assets/js/jquery.counterup.min.js"></script>
+  <!--<< Swiper Slider Js >>-->
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <!--<< MeanMenu Js >>-->
+  <script src="assets/js/jquery.meanmenu.min.js"></script>
+  <!--<< Magnific Popup Js >>-->
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <!--<< Wow Animation Js >>-->
+  <script src="assets/js/wow.min.js"></script>
+  <!--<< Main.js >>-->
+  <script src="assets/js/main.js"></script>
+  <!--<< Booking Confirmation Js >>-->
+  <script src="assets/js/booking-confirmation.js"></script>
+</body>
+
 </html>

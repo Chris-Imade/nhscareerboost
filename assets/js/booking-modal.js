@@ -1,13 +1,13 @@
 /**
  * Zoho Booking Modal System
- * Handles free consultation booking modals across the NHS Career Boost website
+ * Handles free consultation booking modals across the Health Career Boost website
  */
 
-(function() {
-    'use strict';
+(function () {
+  "use strict";
 
-    // Modal HTML template
-    const modalHTML = `
+  // Modal HTML template
+  const modalHTML = `
         <div id="zohoBookingModal" class="zoho-modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
             <div class="zoho-modal-overlay" aria-hidden="true"></div>
             <div class="zoho-modal-container">
@@ -38,8 +38,8 @@
         </div>
     `;
 
-    // Modal CSS styles
-    const modalStyles = `
+  // Modal CSS styles
+  const modalStyles = `
         <style id="zohoModalStyles">
             .zoho-modal {
                 position: fixed;
@@ -279,154 +279,158 @@
         </style>
     `;
 
-    // Initialize modal
-    function initModal() {
-        // Check if modal already exists
-        if (document.getElementById('zohoBookingModal')) {
-            return;
-        }
-
-        // Add styles to head
-        if (!document.getElementById('zohoModalStyles')) {
-            document.head.insertAdjacentHTML('beforeend', modalStyles);
-        }
-
-        // Add modal to body
-        document.body.insertAdjacentHTML('beforeend', modalHTML);
-
-        // Get modal elements
-        const modal = document.getElementById('zohoBookingModal');
-        const closeBtn = modal.querySelector('.zoho-modal-close');
-        const overlay = modal.querySelector('.zoho-modal-overlay');
-
-        // Close modal function
-        function closeModal() {
-            modal.classList.remove('show');
-            document.body.classList.remove('modal-open');
-            
-            setTimeout(() => {
-                modal.classList.remove('active');
-            }, 300);
-
-            // Remove focus trap
-            document.removeEventListener('keydown', handleKeyDown);
-        }
-
-        // Open modal function
-        function openModal() {
-            // Calculate scrollbar width
-            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-            document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
-
-            modal.classList.add('active');
-            document.body.classList.add('modal-open');
-            
-            setTimeout(() => {
-                modal.classList.add('show');
-            }, 10);
-
-            // Set focus to close button
-            closeBtn.focus();
-
-            // Add focus trap
-            document.addEventListener('keydown', handleKeyDown);
-        }
-
-        // Handle keyboard events
-        function handleKeyDown(e) {
-            // Close on Escape key
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-
-            // Trap focus within modal
-            if (e.key === 'Tab') {
-                const focusableElements = modal.querySelectorAll(
-                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-                );
-                const firstElement = focusableElements[0];
-                const lastElement = focusableElements[focusableElements.length - 1];
-
-                if (e.shiftKey && document.activeElement === firstElement) {
-                    e.preventDefault();
-                    lastElement.focus();
-                } else if (!e.shiftKey && document.activeElement === lastElement) {
-                    e.preventDefault();
-                    firstElement.focus();
-                }
-            }
-        }
-
-        // Event listeners
-        closeBtn.addEventListener('click', closeModal);
-        overlay.addEventListener('click', closeModal);
-
-        // Attach to all free consultation buttons
-        attachToButtons(openModal);
+  // Initialize modal
+  function initModal() {
+    // Check if modal already exists
+    if (document.getElementById("zohoBookingModal")) {
+      return;
     }
 
-    // Attach modal to buttons
-    function attachToButtons(openModal) {
-        // Find all buttons/links with "free" in the text
-        const selectors = [
-            'a[href*="consultation"]',
-            'button',
-            '.ht-btn'
-        ];
+    // Add styles to head
+    if (!document.getElementById("zohoModalStyles")) {
+      document.head.insertAdjacentHTML("beforeend", modalStyles);
+    }
 
-        document.querySelectorAll(selectors.join(', ')).forEach(element => {
-            const text = element.textContent.toLowerCase();
-            
-            // Check if button contains "free" and "book" or "consultation"
-            if (text.includes('free') && (text.includes('book') || text.includes('consultation') || text.includes('audit'))) {
-                // Prevent default link behavior
-                element.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    openModal();
-                });
+    // Add modal to body
+    document.body.insertAdjacentHTML("beforeend", modalHTML);
 
-                // Add visual indicator (optional)
-                element.style.cursor = 'pointer';
-            }
+    // Get modal elements
+    const modal = document.getElementById("zohoBookingModal");
+    const closeBtn = modal.querySelector(".zoho-modal-close");
+    const overlay = modal.querySelector(".zoho-modal-overlay");
+
+    // Close modal function
+    function closeModal() {
+      modal.classList.remove("show");
+      document.body.classList.remove("modal-open");
+
+      setTimeout(() => {
+        modal.classList.remove("active");
+      }, 300);
+
+      // Remove focus trap
+      document.removeEventListener("keydown", handleKeyDown);
+    }
+
+    // Open modal function
+    function openModal() {
+      // Calculate scrollbar width
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+      document.documentElement.style.setProperty(
+        "--scrollbar-width",
+        `${scrollbarWidth}px`
+      );
+
+      modal.classList.add("active");
+      document.body.classList.add("modal-open");
+
+      setTimeout(() => {
+        modal.classList.add("show");
+      }, 10);
+
+      // Set focus to close button
+      closeBtn.focus();
+
+      // Add focus trap
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    // Handle keyboard events
+    function handleKeyDown(e) {
+      // Close on Escape key
+      if (e.key === "Escape") {
+        closeModal();
+      }
+
+      // Trap focus within modal
+      if (e.key === "Tab") {
+        const focusableElements = modal.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    }
+
+    // Event listeners
+    closeBtn.addEventListener("click", closeModal);
+    overlay.addEventListener("click", closeModal);
+
+    // Attach to all free consultation buttons
+    attachToButtons(openModal);
+  }
+
+  // Attach modal to buttons
+  function attachToButtons(openModal) {
+    // Find all buttons/links with "free" in the text
+    const selectors = ['a[href*="consultation"]', "button", ".ht-btn"];
+
+    document.querySelectorAll(selectors.join(", ")).forEach((element) => {
+      const text = element.textContent.toLowerCase();
+
+      // Check if button contains "free" and "book" or "consultation"
+      if (
+        text.includes("free") &&
+        (text.includes("book") ||
+          text.includes("consultation") ||
+          text.includes("audit"))
+      ) {
+        // Prevent default link behavior
+        element.addEventListener("click", function (e) {
+          e.preventDefault();
+          openModal();
         });
-    }
 
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initModal);
-    } else {
-        initModal();
-    }
-
-    // Re-attach to buttons after dynamic content loads
-    window.addEventListener('load', function() {
-        setTimeout(initModal, 500);
+        // Add visual indicator (optional)
+        element.style.cursor = "pointer";
+      }
     });
+  }
 
-    // Expose public API
-    window.ZohoBookingModal = {
-        open: function() {
-            const modal = document.getElementById('zohoBookingModal');
-            if (modal) {
-                const event = new Event('click');
-                modal.querySelector('.zoho-modal-close').dispatchEvent(event);
-            } else {
-                initModal();
-                setTimeout(() => {
-                    const modal = document.getElementById('zohoBookingModal');
-                    if (modal) {
-                        modal.classList.add('active', 'show');
-                        document.body.classList.add('modal-open');
-                    }
-                }, 100);
-            }
-        },
-        close: function() {
-            const modal = document.getElementById('zohoBookingModal');
-            if (modal && modal.classList.contains('active')) {
-                modal.querySelector('.zoho-modal-close').click();
-            }
-        }
-    };
+  // Initialize when DOM is ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initModal);
+  } else {
+    initModal();
+  }
 
+  // Re-attach to buttons after dynamic content loads
+  window.addEventListener("load", function () {
+    setTimeout(initModal, 500);
+  });
+
+  // Expose public API
+  window.ZohoBookingModal = {
+    open: function () {
+      const modal = document.getElementById("zohoBookingModal");
+      if (modal) {
+        const event = new Event("click");
+        modal.querySelector(".zoho-modal-close").dispatchEvent(event);
+      } else {
+        initModal();
+        setTimeout(() => {
+          const modal = document.getElementById("zohoBookingModal");
+          if (modal) {
+            modal.classList.add("active", "show");
+            document.body.classList.add("modal-open");
+          }
+        }, 100);
+      }
+    },
+    close: function () {
+      const modal = document.getElementById("zohoBookingModal");
+      if (modal && modal.classList.contains("active")) {
+        modal.querySelector(".zoho-modal-close").click();
+      }
+    },
+  };
 })();
