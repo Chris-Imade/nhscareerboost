@@ -154,7 +154,7 @@ function addToGoogleCalendar(details) {
   const title = encodeURIComponent(`Health Career Boost - ${details.service}`);
   const description = encodeURIComponent(
     `Your Health Career Boost consultation for ${details.service}.\n\n` +
-      `Contact: daniel@healthcareerboost.co.uk\n` +
+      `Contact: info@healthcareerboost.co.uk\n` +
       `Phone: 01604 908464\n\n` +
       `Please ensure you have all relevant documents ready for the session.`
   );
@@ -220,7 +220,7 @@ function addToAppleCalendar(details) {
     `DTSTART:${dtstart}`,
     `DTEND:${dtend}`,
     `SUMMARY:Health Career Boost - ${details.service}`,
-    `DESCRIPTION:Your Health Career Boost consultation for ${details.service}.\\n\\nContact: daniel@healthcareerboost.co.uk\\nPhone: 01604 908464\\n\\nPlease ensure you have all relevant documents ready for the session.`,
+    `DESCRIPTION:Your Health Career Boost consultation for ${details.service}.\\n\\nContact: info@healthcareerboost.co.uk\\nPhone: 01604 908464\\n\\nPlease ensure you have all relevant documents ready for the session.`,
     "LOCATION:Online (Details will be sent via email)",
     "STATUS:CONFIRMED",
     "SEQUENCE:0",
