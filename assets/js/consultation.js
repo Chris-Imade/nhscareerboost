@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             price: 95,
             features: [
                 '30-minute live practice session',
-                'Real NHS-style interview questions',
+                'Real Health-style interview questions',
                 'Confidence and delivery feedback',
                 'Recorded replay (on request)'
             ]
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 message: `Payment ID: ${data.transaction_ref || 'N/A'}\n` +
                         `Appointment Date: ${data.appointment_date || 'N/A'}\n` +
                         `Appointment Time: ${data.appointment_time || 'N/A'}\n` +
-                        `NHS Band: ${data.nhs_band || 'N/A'}\n` +
+                        `Health Band: ${data.nhs_band || 'N/A'}\n` +
                         `Role Applying For: ${data.role || 'N/A'}\n` +
                         `Additional Notes: ${data.notes || 'N/A'}`
             };
@@ -391,7 +391,7 @@ function initializeStripe() {
         stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
         const elements = stripe.elements();
         
-        // Create card element with NHS-themed styling
+        // Create card element with Health-themed styling
         cardElement = elements.create('card', {
             style: {
                 base: {
