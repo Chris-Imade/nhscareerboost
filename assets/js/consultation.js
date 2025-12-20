@@ -1,11 +1,12 @@
 // Consultation/Checkout Page JavaScript with Stripe Integration
 // https://nhscareerboost-server.onrender.com
-const API_BASE_URL = 'https://nhscareerboost-server.onrender.com';
+// http://localhost:3000
+const API_BASE_URL = 'http://localhost:3000';
 const API_ENDPOINT = `${API_BASE_URL}/api/contact`;
 const PAYMENT_API_ENDPOINT = `${API_BASE_URL}/api/payment/create-payment-intent`;
 
 // TODO: Replace with your actual Stripe Publishable Key (pk_live_... or pk_test_...)
-const STRIPE_PUBLISHABLE_KEY = 'pk_live_51RMAlgD8x0lOeX6HLILfE2zN253AsQrw77myCQ6gMKhMMiVJnUeFM92tyJZzs1Wn8ZOOTZJkknp6O9FswR2fgBIW00ifi8zHaG';
+const STRIPE_PUBLISHABLE_KEY = 'pk_test_51RMAlgD8x0lOeX6HcgBqcnHpdaHQQbg24qCPtLRKCyYgB7MyJvVqWq13VMgVjX3RsrdLhA5FF6tK0A3v4Bel3kay00HCDCzJc1';
 
 // Global Stripe variables
 let stripe = null;
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const packages = {
         'cv-review': {
             name: 'CV Review & Optimisation',
-            price: 75,
+            price: 79,
             features: [
                 'Fully marked-up CV',
                 '15-minute feedback call',
@@ -38,34 +39,54 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         },
         'supporting-statement': {
-            name: 'Supporting Statement',
-            price: 125,
+            name: 'Supporting Statement Writing',
+            price: 99,
             features: [
                 'One-to-one discussion',
                 'Fully rewritten statement',
                 'STAR framework guidance',
-                'Top 5 STAR mistakes guide',
                 '5 working days delivery'
             ]
         },
         'mock-interview': {
-            name: 'Mock Interview Coaching',
-            price: 95,
+            name: 'Mock Interview Preparation',
+            price: 89,
             features: [
                 '30-minute live practice session',
-                'Real Health-style interview questions',
+                'Real NHS-style interview questions',
                 'Confidence and delivery feedback',
                 'Recorded replay (on request)'
             ]
         },
-        'complete-package': {
+        '4-week-programme': {
+            name: '4-Week Career Accelerator Programme',
+            price: 299,
+            features: [
+                '4 weeks of intensive support',
+                'CV & statement optimization',
+                'Interview coaching',
+                'Weekly progress reviews',
+                'Career strategy sessions'
+            ]
+        },
+        'career-boost': {
             name: 'Career Boost Package',
             price: 275,
             features: [
-                'Complete CV rewrite',
-                'Supporting statement tailored for your next role',
-                'Mock interview coaching session',
-                'Career roadmap & guidance call'
+                'CV review & rewrite',
+                'Supporting statement',
+                'Mock interview coaching',
+                'Career roadmap guidance'
+            ]
+        },
+        'combined-package': {
+            name: 'Combined Package: CV + Supporting Statement',
+            price: 150,
+            features: [
+                'Complete CV review & optimization',
+                'Full supporting statement writing',
+                'STAR framework guidance',
+                'Best value package'
             ]
         }
     };
@@ -464,15 +485,22 @@ async function handleStripePayment(event) {
     const customerEmail = document.getElementById('customer-email').value.trim();
     
     // Get selected service and price
-    const selectedService = document.querySelector('input[name="service"]:checked');
-    const serviceKey = selectedService ? selectedService.value : 'cv-review';
+    const serviceKey = window.selectedServiceKey || 'cv-review';
     const packages = {
-        'cv-review': { name: 'CV Review & Optimisation', price: 75 },
-        'supporting-statement': { name: 'Supporting Statement', price: 125 },
-        'mock-interview': { name: 'Mock Interview Coaching', price: 150 },
-        'complete-package': { name: 'Complete Career Boost Package', price: 295 }
+        'cv-review': { name: 'CV Review & Optimisation', price: 79 },
+        'supporting-statement': { name: 'Supporting Statement Writing', price: 99 },
+        'mock-interview': { name: 'Mock Interview Preparation', price: 89 },
+        '4-week-programme': { name: '4-Week Career Accelerator Programme', price: 299 },
+        'career-boost': { name: 'Career Boost Package', price: 275 },
+        'combined-package': { name: 'Combined Package: CV + Supporting Statement', price: 150 }
     };
     const pkg = packages[serviceKey];
+    
+    if (!pkg) {
+        showPaymentError('Invalid service selected. Please try again.');
+        setPaymentLoading(false, submitButton, buttonText, spinner);
+        return;
+    }
     
     // Use discounted price if discount is applied, otherwise use original price
     const priceToCharge = isDiscountApplied ? finalPrice : pkg.price;
@@ -581,45 +609,33 @@ function showPaymentError(message) {
 }
 
 function handlePaymentSuccess(paymentIntent, customerName, customerEmail) {
-    // Close payment modal
+    // Keep modal open - DO NOT close it
     const paymentModal = document.getElementById('payment-modal');
-    if (paymentModal) {
-        paymentModal.classList.remove('active');
-    }
     
-    // Hide payment section
+    // Hide the payment form section
     const paymentSection = document.getElementById('payment-section');
     if (paymentSection) {
         paymentSection.style.display = 'none';
     }
     
-    // Show success message
-    const successSection = document.getElementById('success-section');
-    if (successSection) {
-        successSection.style.display = 'block';
+    // Show success message and Zoho form section
+    const successAndFormSection = document.getElementById('success-and-form-section');
+    if (successAndFormSection) {
+        successAndFormSection.style.display = 'block';
+        
+        // Scroll to top of modal content to show success message
+        const modalContent = document.querySelector('.payment-modal-content');
+        if (modalContent) {
+            modalContent.scrollTop = 0;
+        }
     }
     
-    // After 3 seconds, show details form
-    setTimeout(function() {
-        if (successSection) {
-            successSection.style.display = 'none';
-        }
-        
-        const detailsFormSection = document.getElementById('details-form-section');
-        if (detailsFormSection) {
-            detailsFormSection.style.display = 'block';
-        }
-        
-        // Pre-fill transaction reference and customer details
-        const transactionRef = document.getElementById('transaction-ref');
-        if (transactionRef) {
-            transactionRef.value = paymentIntent.id;
-        }
-        
-        // Pre-fill name and email from payment form
-        const fullnameInput = document.querySelector('input[name="fullname"]');
-        const emailInput = document.querySelector('input[name="email"]');
-        if (fullnameInput) fullnameInput.value = customerName;
-        if (emailInput) emailInput.value = customerEmail;
-    }, 3000);
+    // Store payment details for potential use
+    console.log('Payment successful:', {
+        paymentIntentId: paymentIntent.id,
+        customerName: customerName,
+        customerEmail: customerEmail
+    });
+    
+    // Note: User must manually close the modal after completing the Zoho form
 }
