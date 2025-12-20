@@ -1,12 +1,12 @@
 // Consultation/Checkout Page JavaScript with Stripe Integration
 // https://nhscareerboost-server.onrender.com
 // http://localhost:3000
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'https://nhscareerboost-server.onrender.com';
 const API_ENDPOINT = `${API_BASE_URL}/api/contact`;
 const PAYMENT_API_ENDPOINT = `${API_BASE_URL}/api/payment/create-payment-intent`;
 
 // TODO: Replace with your actual Stripe Publishable Key (pk_live_... or pk_test_...)
-const STRIPE_PUBLISHABLE_KEY = 'pk_test_51RMAlgD8x0lOeX6HcgBqcnHpdaHQQbg24qCPtLRKCyYgB7MyJvVqWq13VMgVjX3RsrdLhA5FF6tK0A3v4Bel3kay00HCDCzJc1';
+const STRIPE_PUBLISHABLE_KEY = 'pk_live_51RMAlgD8x0lOeX6HLILfE2zN253AsQrw77myCQ6gMKhMMiVJnUeFM92tyJZzs1Wn8ZOOTZJkknp6O9FswR2fgBIW00ifi8zHaG';
 
 // Global Stripe variables
 let stripe = null;
