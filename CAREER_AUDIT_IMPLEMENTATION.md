@@ -23,7 +23,7 @@
 - Mobile-first responsive design
 - Fast load times
 - Minimal navigation
-- Single, clear CTA throughout: "Book Your Audit (£39)"
+- Single, clear CTA throughout: "Book Free 20min Aud"
 - Integrated Stripe payment modal
 - Post-payment Zoho booking form
 
@@ -36,7 +36,7 @@
 - Modal-based checkout flow
 
 **Payment Flow:**
-1. User clicks "Book Your Audit (£39)"
+1. User clicks "Book Free 20min Aud"
 2. Modal opens with payment form
 3. User enters name, email, card details
 4. Payment processed via Stripe (£39)
@@ -55,7 +55,7 @@
 - ✅ `consultation.html` - Header + Bottom CTA section
 
 **All CTAs Changed From:**
-- "Book Your Audit" → **"Book Your Audit (£39)"**
+- "Book Your Audit" → **"Book Free 20min Aud"**
 - Links to `career-audit.html` → **`career-audit.html`**
 
 **Mobile Menu Updates:**
