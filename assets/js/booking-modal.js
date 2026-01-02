@@ -19,7 +19,7 @@
                         </svg>
                     </button>
                     <div class="zoho-modal-header">
-                        <h2 id="modalTitle">Book Your Free 15-Minute Consultation</h2>
+                        <h2 id="modalTitle">Book Your Free 20-Minute Consultation</h2>
                         <p>Choose a convenient time for your free CV audit and career consultation</p>
                     </div>
                     <div class="zoho-modal-body">
