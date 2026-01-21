@@ -1,7 +1,7 @@
 // Consultation/Checkout Page JavaScript with Stripe Integration
-// https://nhscareerboost-server.onrender.com
+// https://nhscareerboost-server-ddy9.onrender.com
 // http://localhost:3000
-const API_BASE_URL = 'https://nhscareerboost-server.onrender.com';
+const API_BASE_URL = 'https://nhscareerboost-server-ddy9.onrender.com';
 const API_ENDPOINT = `${API_BASE_URL}/api/contact`;
 const PAYMENT_API_ENDPOINT = `${API_BASE_URL}/api/payment/create-payment-intent`;
 
