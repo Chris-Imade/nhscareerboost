@@ -105,6 +105,13 @@
                 margin-bottom: 30px !important;
             }
         }
+        
+        /* Service card hover effects */
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 94, 184, 0.25) !important;
+        }
+    }
     </style>
 </head>
 
@@ -247,7 +254,42 @@
                 <h2 class="title wow fadeInUp" data-wow-delay=".4s">Professional Support for Every Career Stage</h2>
                 <p class="desc wow fadeInUp" data-wow-delay=".6s" style="max-width: 700px; margin: 0 auto;">From targeted CV reviews to our complete 4-week programme, find the right support to accelerate your NHS career</p>
             </div>
-            <div class="row mt-50 g-4">
+            <!-- Quick Support Section Header -->
+            <div class="row mt-50">
+                <div class="col-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div style="margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid #e8f4f8;">
+                        <h3 style="color: #005EB8; font-size: 22px; font-weight: 700; margin-bottom: 8px;">Quick Support / First Step</h3>
+                        <p style="color: #768692; font-size: 14px; margin: 0;">Short, personalised support before applying or progressing further.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- NEW: Service Card 0: 1:1 NHS Career Audit (FIRST) -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".35s">
+                    <div class="service-card" style="background: white; border-radius: 20px; padding: 40px 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.08); height: 100%; transition: all 0.3s ease; border-top: 4px solid #005EB8; position: relative;">
+                        <!-- Optional Badge -->
+                        <span style="position: absolute; top: 15px; left: 50%; transform: translateX(-50%); background-color: #e8f4f8; color: #005EB8; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 600; text-transform: uppercase;">Most popular first step</span>
+                        
+                        <div class="icon" style="margin-bottom: 25px; margin-top: 15px;">
+                            <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #005EB8 0%, #003087 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 8px 20px rgba(0, 94, 184, 0.3);">
+                                <i class="fa-solid fa-clipboard-check" style="font-size: 32px; color: white;"></i>
+                            </div>
+                        </div>
+                        
+                        <h4 style="color: #005EB8; margin-bottom: 10px; font-size: 20px; font-weight: 700;">1:1 NHS Career Audit</h4>
+                        <p style="color: #768692; font-size: 13px; margin-bottom: 15px; font-weight: 600;">Clear, honest feedback before you apply</p>
+                        <p style="color: #666; font-size: 15px; line-height: 1.6; margin-bottom: 20px;">Personalised insight into how your CV or supporting statement would likely score at NHS shortlisting.</p>
+                        
+                        <p style="color: #005EB8; font-size: 24px; font-weight: 700; margin-bottom: 20px;">£29.99</p>
+                        
+                        <a href="https://healthcareerboost.co.uk/career-audit" class="ht-btn" style="background-color: #005EB8; border-color: #005EB8; font-weight: 600; padding: 12px 30px; font-size: 15px; width: 100%; text-transform: uppercase;">BOOK NOW</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Premium Services Section -->
+            <div class="row mt-60 g-4">
                 <!-- Service Card 1: CV Review -->
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                     <div class="service-card" style="background: white; border-radius: 20px; padding: 40px 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.08); height: 100%; transition: all 0.3s ease; border-top: 4px solid #005EB8;">

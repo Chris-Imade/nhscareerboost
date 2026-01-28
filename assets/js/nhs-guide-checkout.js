@@ -4,9 +4,9 @@
 // http://localhost:3000/ - dev-server URL
 // https://nhscareerboost-server-ddy9.onrender.com - deployment URL
 
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'https://nhscareerboost-server-ddy9.onrender.com';
 const PAYMENT_API_ENDPOINT = `${API_BASE_URL}/api/payment/create-payment-intent`;
-const STRIPE_PUBLISHABLE_KEY = 'pk_test_51RMAlgD8x0lOeX6HcgBqcnHpdaHQQbg24qCPtLRKCyYgB7MyJvVqWq13VMgVjX3RsrdLhA5FF6tK0A3v4Bel3kay00HCDCzJc1';
+const STRIPE_PUBLISHABLE_KEY = 'pk_live_51RMAlgD8x0lOeX6HLILfE2zN253AsQrw77myCQ6gMKhMMiVJnUeFM92tyJZzs1Wn8ZOOTZJkknp6O9FswR2fgBIW00ifi8zHaG';
 
 // STRIPE_PUBLIC_KEY=pk_test_51RMAlgD8x0lOeX6HcgBqcnHpdaHQQbg24qCPtLRKCyYgB7MyJvVqWq13VMgVjX3RsrdLhA5FF6tK0A3v4Bel3kay00HCDCzJc1
 // STRIPE_PK_LIVE=pk_live_51RMAlgD8x0lOeX6HLILfE2zN253AsQrw77myCQ6gMKhMMiVJnUeFM92tyJZzs1Wn8ZOOTZJkknp6O9FswR2fgBIW00ifi8zHaG
