@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Health Career Boost">
+    <meta name="description" content="Thank you for your purchase - Download your NHS Shortlisting Guide">
+    
+    <title>Thank You - NHS Shortlisting Guide | Health Career Boost</title>
+    
+    <link rel="shortcut icon" href="../assets/img/icon/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #231f20;
+            background-color: #f0f4f5;
+        }
+
+        .thank-you-container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .success-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 50px 40px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #007F3B;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+        }
+
+        .success-icon i {
+            font-size: 40px;
+            color: #ffffff;
+        }
+
+        .success-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #231f20;
+            margin-bottom: 15px;
+        }
+
+        .success-message {
+            font-size: 18px;
+            color: #425563;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        .download-button {
+            display: inline-block;
+            background-color: #005EB8;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .download-button:hover {
+            background-color: #003087;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 94, 184, 0.3);
+            color: #ffffff;
+        }
+
+        .download-button i {
+            margin-right: 10px;
+        }
+
+        .info-text {
+            font-size: 14px;
+            color: #768692;
+            margin-top: 20px;
+        }
+
+        .upsell-confirmation {
+            background-color: #fff5e6;
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+            text-align: left;
+        }
+
+        .upsell-confirmation-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #231f20;
+            margin-bottom: 10px;
+        }
+
+        .upsell-confirmation-text {
+            font-size: 15px;
+            color: #425563;
+            line-height: 1.6;
+        }
+
+        .upsell-confirmation.hidden {
+            display: none;
+        }
+
+        .reminder-section {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .reminder-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #231f20;
+            margin-bottom: 20px;
+        }
+
+        .reminder-text {
+            font-size: 16px;
+            color: #425563;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .who-for-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .who-for-list li {
+            font-size: 16px;
+            color: #425563;
+            padding: 10px 0 10px 35px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .who-for-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #007F3B;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .next-steps {
+            background-color: #f0f4f5;
+            border-left: 4px solid #005EB8;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .next-steps-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #231f20;
+            margin-bottom: 15px;
+        }
+
+        .next-steps ol {
+            margin-left: 20px;
+            color: #425563;
+        }
+
+        .next-steps li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .footer-section {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #768692;
+            margin-bottom: 10px;
+        }
+
+        .footer-link {
+            color: #005EB8;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .success-card {
+                padding: 40px 25px;
+            }
+
+            .success-title {
+                font-size: 28px;
+            }
+
+            .success-message {
+                font-size: 16px;
+            }
+
+            .reminder-section {
+                padding: 30px 20px;
+            }
+
+            .reminder-title {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="thank-you-container">
+        <div class="success-card">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            
+            <h1 class="success-title">Thank You for Your Purchase!</h1>
+            
+            <p class="success-message">
+                Your payment was successful. You now have instant access to the NHS Shortlisting Guide.
+            </p>
+            
+            <a href="../assets/files/NHS-Shortlisting-Guide.pdf" download="NHS-Shortlisting-Guide.pdf" class="download-button">
+                <i class="fas fa-download"></i>Download Your Guide Now
+            </a>
+            
+            <p class="info-text">
+                The guide is a PDF file that works on all devices. No login required.
+            </p>
+            
+            <!-- Upsell Confirmation (shown only if upsell was purchased) -->
+            <div id="upsell-confirmation" class="upsell-confirmation hidden">
+                <div class="upsell-confirmation-title">✅ Personal NHS Career Audit Included</div>
+                <div class="upsell-confirmation-text">
+                    You've also purchased the Personal NHS Career Audit (£39). We'll contact you within 24 hours at the email address you provided to schedule your one-to-one session.
+                </div>
+            </div>
+        </div>
+
+        <div class="reminder-section">
+            <h2 class="reminder-title">What's Inside Your Guide</h2>
+            
+            <p class="reminder-text">
+                The NHS Shortlisting Guide is designed to help you succeed in your NHS application journey. It's perfect for:
+            </p>
+            
+            <ul class="who-for-list">
+                <li><strong>Rejected applicants</strong> — Learn exactly what went wrong and how to fix it</li>
+                <li><strong>Career switchers</strong> — Translate your private sector experience into NHS language</li>
+                <li><strong>First-time NHS applicants</strong> — Understand what NHS recruiters are looking for</li>
+            </ul>
+
+            <div class="next-steps">
+                <div class="next-steps-title">Next Steps:</div>
+                <ol>
+                    <li>Download the guide using the button above</li>
+                    <li>Read through the entire guide (it's designed to be practical and actionable)</li>
+                    <li>Apply the strategies to your next NHS application</li>
+                    <li>Track your results and adjust as needed</li>
+                </ol>
+            </div>
+
+            <p class="reminder-text">
+                <strong>Need more help?</strong> If you want personalized support with your NHS career journey, check out our <a href="../services.html" class="footer-link">one-to-one coaching services</a>.
+            </p>
+        </div>
+
+        <footer class="footer-section">
+            <p class="footer-text">
+                Questions? Email us at <a href="mailto:support@healthcareerboost.co.uk" class="footer-link">support@healthcareerboost.co.uk</a>
+            </p>
+            <p class="footer-text">
+                &copy; 2025 Health Career Boost. All rights reserved.
+            </p>
+            <p class="footer-text">
+                <a href="../index.html" class="footer-link">Return to Homepage</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    
+    <script>
+        // Check URL parameters to show upsell confirmation
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const upsellPurchased = urlParams.get('upsell') === 'true';
+            
+            if (upsellPurchased) {
+                const upsellConfirmation = document.getElementById('upsell-confirmation');
+                if (upsellConfirmation) {
+                    upsellConfirmation.classList.remove('hidden');
+                }
+            }
+            
+            // Optional: Track conversion with Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'purchase', {
+                    transaction_id: urlParams.get('payment_intent'),
+                    value: upsellPurchased ? 48.99 : 9.99,
+                    currency: 'GBP',
+                    items: [
+                        {
+                            item_id: 'nhs-shortlisting-guide',
+                            item_name: 'NHS Shortlisting Guide',
+                            price: 9.99,
+                            quantity: 1
+                        }
+                    ]
+                });
+                
+                if (upsellPurchased) {
+                    gtag('event', 'purchase', {
+                        transaction_id: urlParams.get('payment_intent'),
+                        value: 39,
+                        currency: 'GBP',
+                        items: [
+                            {
+                                item_id: 'nhs-career-audit',
+                                item_name: 'Personal NHS Career Audit',
+                                price: 39,
+                                quantity: 1
+                            }
+                        ]
+                    });
+                }
+            }
+            
+            // Optional: Track conversion with Meta Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Purchase', {
+                    value: upsellPurchased ? 48.99 : 9.99,
+                    currency: 'GBP',
+                    content_ids: upsellPurchased ? ['nhs-guide', 'career-audit'] : ['nhs-guide'],
+                    content_type: 'product'
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>
