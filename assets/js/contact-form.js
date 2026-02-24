@@ -3,7 +3,7 @@
  * Handles form submission to backend API
  */
 
-const API_BASE_URL = "https://nhscareerboost-server.onrender.com";
+const API_BASE_URL = "https://nhscareerboost-server-ddy9.onrender.com";
 const API_ENDPOINT = `${API_BASE_URL}/api/contact`;
 
 document.addEventListener("DOMContentLoaded", function () {

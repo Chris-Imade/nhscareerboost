@@ -88,7 +88,7 @@
 
 ### Stripe Integration
 - **Live Key**: `pk_live_51RMAlgD8x0lOeX6HLILfE2zN253AsQrw77myCQ6gMKhMMiVJnUeFM92tyJZzs1Wn8ZOOTZJkknp6O9FswR2fgBIW00ifi8zHaG`
-- **Backend**: `https://nhscareerboost-server.onrender.com`
+- **Backend**: `https://nhscareerboost-server-ddy9.onrender.com`
 - **Endpoint**: `/api/payment/create-payment-intent`
 
 ### Service Details
@@ -340,5 +340,5 @@ POST /api/payment/create-payment-intent
 
 **Implementation Date**: December 20, 2025
 **Status**: ✅ Ready for Production
-**Backend**: https://nhscareerboost-server.onrender.com
+**Backend**: https://nhscareerboost-server-ddy9.onrender.com
 **Stripe Mode**: LIVE (Real Payments)
