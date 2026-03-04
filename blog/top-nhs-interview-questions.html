@@ -203,22 +203,37 @@
     </div>
     <div class="ht-offcanvas-overlay"></div>
     
-    <!-- Disclaimer Section Start -->
-    <section class="disclaimer-section" style="background-color: #fff3cd; border-top: 3px solid #ffc107; border-bottom: 3px solid #ffc107; padding: 20px 0; margin-top: 100px;">
+    <div id="disclaimer-banner" class="disclaimer-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #fff3cd; border-top: 3px solid #ffc107; padding: 20px 0; z-index: 9999; box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-1 text-center">
-                    <i class="fa-solid fa-info-circle" style="font-size: 36px; color: #856404;"></i>
+                <div class="col-lg-1 col-md-2 col-2 text-center">
+                    <i class="fa-solid fa-info-circle" style="font-size: 28px; color: #856404;"></i>
                 </div>
-                <div class="col-lg-11">
-                    <p style="margin: 0; color: #856404; font-size: 15px; font-weight: 500; line-height: 1.6;">
+                <div class="col-lg-9 col-md-8 col-10">
+                    <p style="margin: 0; color: #856404; font-size: 14px; font-weight: 500; line-height: 1.5;">
                         <strong>Important Disclaimer:</strong> Health Career Boost is an independent career coaching service and is not affiliated with, endorsed by, or connected to the NHS or any NHS organisation.
                     </p>
                 </div>
+                <div class="col-lg-2 col-md-2 col-12 text-center" style="margin-top: 10px;">
+                    <button id="dismiss-disclaimer" class="btn" style="background-color: #856404; color: white; border: none; padding: 10px 24px; border-radius: 6px; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.3s ease; white-space: nowrap;">Understood</button>
+                </div>
             </div>
         </div>
-    </section>
-    <!-- Disclaimer Section End -->
+    </div>
+    <script>
+        (function() {
+            const banner = document.getElementById('disclaimer-banner');
+            const dismissBtn = document.getElementById('dismiss-disclaimer');
+            const disclaimerKey = 'disclaimerDismissed';
+            const isDismissed = localStorage.getItem(disclaimerKey);
+            if (!isDismissed) { setTimeout(function() { banner.style.display = 'block'; }, 500); }
+            if (dismissBtn) {
+                dismissBtn.addEventListener('click', function() { banner.style.display = 'none'; localStorage.setItem(disclaimerKey, 'true'); });
+                dismissBtn.addEventListener('mouseenter', function() { this.style.backgroundColor = '#6c5228'; this.style.transform = 'translateY(-2px)'; this.style.boxShadow = '0 4px 12px rgba(133, 100, 4, 0.3)'; });
+                dismissBtn.addEventListener('mouseleave', function() { this.style.backgroundColor = '#856404'; this.style.transform = 'translateY(0)'; this.style.boxShadow = 'none'; });
+            }
+        })();
+    </script>
     
     <section class="blog-article">
         <div class="container">
