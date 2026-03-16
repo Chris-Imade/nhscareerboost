@@ -191,164 +191,6 @@
             color: #0066cc !important;
         }
 
-        /* Stripe Payment Modal */
-        .payment-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .payment-modal.active {
-            display: flex;
-        }
-
-        .payment-modal-content {
-            background: white;
-            border-radius: 16px;
-            max-width: 500px;
-            width: 100%;
-            padding: 40px;
-            position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .payment-modal-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 28px;
-            cursor: pointer;
-            color: #666;
-            line-height: 1;
-            padding: 5px 10px;
-        }
-
-        .payment-modal-close:hover {
-            color: #333;
-        }
-
-        .payment-modal h3 {
-            color: #0066cc;
-            margin-bottom: 10px;
-            font-size: 24px;
-        }
-
-        .payment-modal .subtitle {
-            color: #666;
-            margin-bottom: 25px;
-            font-size: 14px;
-        }
-
-        .payment-amount-display {
-            background: #f0f7ff;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            text-align: center;
-            border: 2px solid #0066cc;
-        }
-
-        .payment-amount-label {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .payment-amount-value {
-            color: #0066cc;
-            font-size: 36px;
-            font-weight: bold;
-        }
-
-        .stripe-form-group {
-            margin-bottom: 20px;
-        }
-
-        .stripe-form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .stripe-form-group input {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-
-        .stripe-form-group input:focus {
-            outline: none;
-            border-color: #0066cc;
-        }
-
-        #card-element {
-            padding: 12px 16px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            background: white;
-        }
-
-        #card-element.StripeElement--focus {
-            border-color: #0066cc;
-        }
-
-        #card-errors {
-            color: #dc3545;
-            margin-top: 8px;
-            font-size: 14px;
-            min-height: 20px;
-        }
-
-        .payment-submit-btn {
-            width: 100%;
-            padding: 16px;
-            background: #0066cc;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .payment-submit-btn:hover:not(:disabled) {
-            background: #0052a3;
-            transform: translateY(-2px);
-        }
-
-        .payment-submit-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .payment-spinner {
-            display: none;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin: 0 auto;
-        }
-
         @keyframes spin {
             to {
                 transform: rotate(360deg);
@@ -607,7 +449,7 @@
                 </div>
                 <div class="col-lg-9 col-md-8 col-10">
                     <p style="margin: 0; color: #856404; font-size: 14px; font-weight: 500; line-height: 1.5;">
-                        <strong>Important Disclaimer:</strong> Health Career Boost is an independent career coaching service and is not affiliated with, endorsed by, or connected to the NHS or any NHS organisation.
+                        <strong>Important Disclaimer:</strong> Health Career Boost is an independent career coaching service and is not affiliated with, endorsed by, or connected to any healthcare organisation, employer, or recruitment body.
                     </p>
                 </div>
                 <div class="col-lg-2 col-md-2 col-12 text-center" style="margin-top: 10px;">
@@ -659,7 +501,7 @@
                 <h2 class="ht-breadcrumb-title wow fadeInUp" data-wow-delay=".4s" style="color: white; font-size: 48px; margin-top: 20px; margin-bottom: 20px; font-weight: 700; line-height: 1.2;">Professional Career Services</h2>
                 <p class="wow fadeInUp" data-wow-delay=".6s"
                     style="font-size: 20px; color: rgba(255, 255, 255, 0.95); margin-top: 15px; max-width: 800px; margin-left: auto; margin-right: auto; font-weight: 400; line-height: 1.7;">
-                    Select the service that fits your needs and take the next step towards your NHS career goal.</p>
+                    Select the service that fits your needs and take the next step towards your healthcare career goal.</p>
                 <p class="wow fadeInUp" data-wow-delay=".7s" style="font-size: 16px; color: rgba(255, 255, 255, 0.9); margin-top: 15px; font-style: italic;">
                     <i class="fa-solid fa-shield-halved" style="margin-right: 8px;"></i>All sessions are confidential, personalised, and led by a coach with over 11 years'Experience.</p>
                 <ul class="ht-breadcrumb-list wow fadeInUp" data-wow-delay=".8s" style="margin-top: 30px;">
@@ -692,7 +534,7 @@
                                 <i class="fa-solid fa-file-circle-check" style="font-size: 36px; color: white;"></i>
                             </div>
                             <h3 style="font-size: 24px; font-weight: 700; color: #005EB8; margin-bottom: 15px; line-height: 1.3;">CV Review & Optimisation</h3>
-                            <p style="font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 25px; flex-grow: 1;">ATS-friendly CV rewrite tailored to your target NHS role with expert feedback.</p>
+                            <p style="font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 25px; flex-grow: 1;">ATS-friendly CV rewrite tailored to your target healthcare role with expert feedback.</p>
                         </div>
                         <div style="border-top: 2px solid #f0f7ff; padding-top: 25px; margin-top: auto;">
                             <div style="margin-bottom: 25px;">
@@ -744,7 +586,7 @@
                                 <i class="fa-solid fa-user-tie" style="font-size: 36px; color: white;"></i>
                             </div>
                             <h3 style="font-size: 24px; font-weight: 700; color: #005EB8; margin-bottom: 15px; line-height: 1.3;">Mock Interview Preparation</h3>
-                            <p style="font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 25px; flex-grow: 1;">Real NHS questions with personalized feedback to boost your confidence.</p>
+                            <p style="font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 25px; flex-grow: 1;">Real healthcare questions with personalized feedback to boost your confidence.</p>
                         </div>
                         <div style="border-top: 2px solid #f0f7ff; padding-top: 25px; margin-top: auto;">
                             <div style="margin-bottom: 25px;">
@@ -753,7 +595,7 @@
                             </div>
                             <ul style="list-style: none; padding: 0; margin: 0 0 25px 0;">
                                 <li style="margin-bottom: 12px; color: #666; font-size: 15px;"><i class="fa-solid fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>30-minute live session</li>
-                                <li style="margin-bottom: 12px; color: #666; font-size: 15px;"><i class="fa-solid fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>Real NHS-style questions</li>
+                                <li style="margin-bottom: 12px; color: #666; font-size: 15px;"><i class="fa-solid fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>Real healthcare-style questions</li>
                                 <li style="margin-bottom: 12px; color: #666; font-size: 15px;"><i class="fa-solid fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>Confidence feedback</li>
                                 <li style="margin-bottom: 12px; color: #666; font-size: 15px;"><i class="fa-solid fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>Recorded replay available</li>
                             </ul>
@@ -870,7 +712,7 @@
                         </div>
                         <div style="text-align: center;">
                             <i class="fa-solid fa-user-tie" style="color: #005EB8; font-size: 36px; margin-bottom: 10px;"></i>
-                            <p style="margin: 0; font-size: 14px; color: #666; font-weight: 600;">11+ Years<br>NHS Experience</p>
+                            <p style="margin: 0; font-size: 14px; color: #666; font-weight: 600;">11+ Years<br>Healthcare Experience</p>
                         </div>
                         <div style="text-align: center;">
                             <i class="fa-solid fa-star" style="color: #FFD700; font-size: 36px; margin-bottom: 10px;"></i>
@@ -891,56 +733,19 @@
     </section>
     <!-- Services Selection Area End -->
 
-    <!-- Stripe Payment Modal -->
-    <div id="payment-modal" class="payment-modal">
-        <div class="payment-modal-content">
-            <button class="payment-modal-close" id="close-payment-modal">&times;</button>
+    <!-- Contact Form Modal -->
+    <div id="contact-modal" class="contact-modal">
+        <div class="contact-modal-content">
+            <button class="contact-modal-close" id="close-contact-modal">&times;</button>
             
-            <!-- Payment Section (Initially Visible) -->
-            <div id="payment-section">
-                <h3 style="color: #005EB8; margin-bottom: 10px; font-size: 28px; font-weight: 700;">Secure Payment</h3>
-                <p class="subtitle" style="color: #666; margin-bottom: 30px; font-size: 15px;">Complete your booking securely with Stripe</p>
+            <!-- Contact Form Section -->
+            <div id="contact-form-section">
+                <h3 style="color: #005EB8; margin-bottom: 10px; font-size: 28px; font-weight: 700;">Book Your Service</h3>
+                <p class="subtitle" style="color: #666; margin-bottom: 20px; font-size: 15px;">Complete the form below and we'll get back to you within 24 hours</p>
 
-                <div class="payment-amount-display" style="background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%); padding: 25px; border-radius: 12px; margin-bottom: 30px; text-align: center; border: 2px solid #005EB8;">
-                    <div class="payment-amount-label" style="color: #666; font-size: 14px; margin-bottom: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Total Amount</div>
-                    <div class="payment-amount-value" style="color: #005EB8; font-size: 42px; font-weight: 700; margin-bottom: 5px;">£<span id="modal-payment-amount">79</span></div>
-                    <div id="selected-service-name" style="color: #666; font-size: 15px; font-weight: 500;">CV Review & Optimisation</div>
-                </div>
-
-                <form id="stripe-payment-form">
-                    <div class="stripe-form-group" style="margin-bottom: 20px;">
-                        <label for="customer-name" style="display: block; margin-bottom: 8px; color: #333; font-weight: 600; font-size: 14px;">Full Name *</label>
-                        <input type="text" id="customer-name" name="name" required placeholder="John Smith" autocomplete="name" style="width: 100%; padding: 12px 16px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; transition: border-color 0.3s;">
-                    </div>
-
-                    <div class="stripe-form-group" style="margin-bottom: 20px;">
-                        <label for="customer-email" style="display: block; margin-bottom: 8px; color: #333; font-weight: 600; font-size: 14px;">Email Address *</label>
-                        <input type="email" id="customer-email" name="email" required placeholder="john@example.com" autocomplete="email" style="width: 100%; padding: 12px 16px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; transition: border-color 0.3s;">
-                    </div>
-
-                    <div class="stripe-form-group" style="margin-bottom: 20px;">
-                        <label for="card-element" style="display: block; margin-bottom: 8px; color: #333; font-weight: 600; font-size: 14px;">Card Details *</label>
-                        <div id="card-element" style="padding: 12px 16px; border: 2px solid #ddd; border-radius: 8px; background: white;"></div>
-                        <div id="card-errors" style="color: #dc3545; margin-top: 8px; font-size: 14px; min-height: 20px;"></div>
-                    </div>
-
-                    <button type="submit" class="payment-submit-btn" id="payment-submit-btn" style="width: 100%; padding: 16px; background: #005EB8; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background-color 0.3s, transform 0.2s;">
-                        <span id="payment-button-text">Complete Payment</span>
-                        <div class="payment-spinner" id="payment-spinner" style="display: none; width: 20px; height: 20px; border: 3px solid rgba(255, 255, 255, 0.3); border-top-color: white; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto;"></div>
-                    </button>
-                </form>
-
-                <div class="secure-badge" style="text-align: center; margin-top: 20px; color: #666; font-size: 13px;">
-                    <p style="margin: 0;"><i class="fa-solid fa-lock" style="color: #28a745; margin-right: 5px;"></i> Secure payment powered by Stripe</p>
-                </div>
-            </div>
-
-            <!-- Success Message & Zoho Form (Hidden Initially) -->
-            <div id="success-and-form-section" style="display: none;">
-                <div style="text-align: center; margin-bottom: 30px; padding: 30px; background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%); border-radius: 12px; color: white;">
-                    <i class="fa-solid fa-check-circle" style="font-size: 48px; margin-bottom: 15px;"></i>
-                    <h3 style="font-size: 26px; font-weight: 700; margin-bottom: 10px;">Payment Successful!</h3>
-                    <p style="font-size: 16px; margin: 0; opacity: 0.95;">Please complete your details below to finalize your booking.</p>
+                <div class="service-info-display" style="background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%); padding: 20px; border-radius: 12px; margin-bottom: 25px; text-align: center; border: 2px solid #005EB8;">
+                    <div style="color: #666; font-size: 14px; margin-bottom: 5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Selected Service</div>
+                    <div id="selected-service-name" style="color: #005EB8; font-size: 20px; font-weight: 700;">CV Review & Optimisation</div>
                 </div>
 
                 <!-- Zoho Form -->
@@ -955,8 +760,8 @@
     </div>
 
     <style>
-        /* Payment Modal Styles */
-        .payment-modal {
+        /* Contact Modal Styles */
+        .contact-modal {
             display: none;
             position: fixed;
             top: 0;
@@ -971,14 +776,14 @@
             overflow-y: auto;
         }
 
-        .payment-modal.active {
+        .contact-modal.active {
             display: flex;
         }
 
-        .payment-modal-content {
+        .contact-modal-content {
             background: white;
             border-radius: 20px;
-            max-width: 550px;
+            max-width: 650px;
             width: 100%;
             padding: 40px;
             position: relative;
@@ -987,7 +792,7 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
-        .payment-modal-close {
+        .contact-modal-close {
             position: absolute;
             top: 15px;
             right: 15px;
@@ -1001,42 +806,15 @@
             transition: color 0.3s;
         }
 
-        .payment-modal-close:hover {
+        .contact-modal-close:hover {
             color: #333;
-        }
-
-        .stripe-form-group input:focus,
-        #card-element.StripeElement--focus {
-            outline: none;
-            border-color: #005EB8;
-        }
-
-        .payment-submit-btn:hover:not(:disabled) {
-            background: #003087;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 94, 184, 0.4);
-        }
-
-        .payment-submit-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
         }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .payment-modal-content {
+            .contact-modal-content {
                 padding: 30px 20px;
                 max-height: 95vh;
-            }
-
-            .payment-amount-value {
-                font-size: 36px !important;
             }
         }
     </style>
@@ -1114,10 +892,6 @@
     <script src="assets/js/typed.min.js"></script>
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
-    <!--<< Stripe.js >>-->
-    <script src="https://js.stripe.com/v3/"></script>
-    <!--<< Consultation.js >>-->
-    <script src="assets/js/consultation.js"></script>
 
     <!-- Toggle Details Function -->
     <script>
@@ -1148,33 +922,29 @@
                     
                     const serviceKey = serviceKeys[index];
                     const serviceData = {
-                        'cv-review': { name: 'CV Review & Optimisation', price: 79 },
-                        'supporting-statement': { name: 'Supporting Statement Writing', price: 99 },
-                        'mock-interview': { name: 'Mock Interview Preparation', price: 89 },
-                        '4-week-programme': { name: '4-Week Career Accelerator Programme', price: 299 },
-                        'career-boost': { name: 'Career Boost Package', price: 275 },
-                        'combined-package': { name: 'Combined Package: CV + Supporting Statement', price: 150 }
+                        'cv-review': { name: 'CV Review & Optimisation' },
+                        'supporting-statement': { name: 'Supporting Statement Writing' },
+                        'mock-interview': { name: 'Mock Interview Preparation' },
+                        '4-week-programme': { name: '4-Week Career Accelerator Programme' },
+                        'career-boost': { name: 'Career Boost Package' },
+                        'combined-package': { name: 'Combined Package: CV + Supporting Statement' }
                     };
                     
                     const service = serviceData[serviceKey];
                     
-                    // Update modal content
-                    document.getElementById('modal-payment-amount').textContent = service.price;
+                    // Update modal content with selected service name
                     document.getElementById('selected-service-name').textContent = service.name;
                     
-                    // Store selected service for payment processing
-                    window.selectedServiceKey = serviceKey;
-                    
                     // Show modal
-                    const modal = document.getElementById('payment-modal');
+                    const modal = document.getElementById('contact-modal');
                     modal.classList.add('active');
                     document.body.style.overflow = 'hidden';
                 });
             });
             
             // Close modal handlers
-            const closeBtn = document.getElementById('close-payment-modal');
-            const modal = document.getElementById('payment-modal');
+            const closeBtn = document.getElementById('close-contact-modal');
+            const modal = document.getElementById('contact-modal');
             
             if (closeBtn) {
                 closeBtn.addEventListener('click', function() {
